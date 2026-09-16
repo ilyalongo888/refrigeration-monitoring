@@ -1,4 +1,178 @@
-export const ru = {
+export interface PricingPlan {
+  label: string;
+  badge: string | null;
+  title: string;
+  price: string;
+  period: string;
+  description: string;
+  featuresIntro?: string;
+  features: string[];
+  extra: string | null;
+  cta: string;
+  highlighted: boolean;
+}
+
+export interface EquipmentRow {
+  name: string;
+  temp: string;
+  status: "normal" | "alert";
+}
+
+export interface TimelineItem {
+  time: string;
+  text: string;
+}
+
+export interface Dictionary {
+  meta: {
+    brand: string;
+  };
+  nav: {
+    how: string;
+    solutions: string;
+    pricing: string;
+    diagnostics: string;
+    contacts: string;
+    cta: string;
+  };
+  hero: {
+    badge: string;
+    h1: string;
+    subtitle: string;
+    ctaPrimary: string;
+    ctaSecondary: string;
+    proofLine: string;
+  };
+  dashboard: {
+    title: string;
+    online: string;
+    metrics: {
+      objects: string;
+      normal: string;
+      alerts: string;
+    };
+    tableHeaders: {
+      equipment: string;
+      temperature: string;
+      status: string;
+    };
+    equipment: EquipmentRow[];
+    statusLabels: {
+      normal: string;
+      alert: string;
+    };
+    incident: {
+      label: string;
+      unit: string;
+      timeline: TimelineItem[];
+    };
+    lastCheck: string;
+  };
+  problem: {
+    heading: string;
+    cards: { title: string; text: string }[];
+    statement: string;
+  };
+  howItWorks: {
+    heading: string;
+    subtitle: string;
+    steps: { number: string; title: string; text: string }[];
+  };
+  controlLevels: {
+    heading: string;
+    levels: { label: string; title: string; flow: string }[];
+  };
+  pricing: {
+    heading: string;
+    subtitle: string;
+    plans: PricingPlan[];
+  };
+  diagnostics: {
+    heading: string;
+    subheading: string;
+    text: string;
+    included: string[];
+    price: string;
+    cta: string;
+    chartTitle: string;
+    chartNormalZone: string;
+    tooltip: string;
+  };
+  industries: {
+    heading: string;
+    items: string[];
+  };
+  dashboardDemo: {
+    heading: string;
+    tableTitle: string;
+    incidentTitle: string;
+    unit: string;
+    currentTempLabel: string;
+    targetLabel: string;
+    target: string;
+    status: string;
+    timeline: TimelineItem[];
+    inProgress: string;
+  };
+  benefits: {
+    heading: string;
+    cards: { title: string; text: string }[];
+  };
+  finalCta: {
+    label: string;
+    heading: string;
+    text: string;
+    ctaPrimary: string;
+    ctaSecondary: string;
+  };
+  contactForm: {
+    heading: string;
+    subheading: string;
+    fields: {
+      name: string;
+      company: string;
+      phone: string;
+      email: string;
+      units: string;
+      businessType: string;
+    };
+    businessTypes: string[];
+    selectPlaceholder: string;
+    submit: string;
+    successTitle: string;
+    successText: string;
+  };
+  footer: {
+    tagline: string;
+    linksHeading: string;
+    links: {
+      how: string;
+      pricing: string;
+      diagnostics: string;
+      privacy: string;
+      terms: string;
+      contacts: string;
+    };
+    contactsHeading: string;
+    email: string;
+    phone: string;
+    disclaimer: string;
+    rights: string;
+  };
+  common: {
+    liveLabel: string;
+    onlineLabel: string;
+    connectedLabel: string;
+    lastUpdate: string;
+    microcopy: {
+      sensorConnected: string;
+      thresholdExceeded: string;
+      escalationStarted: string;
+    };
+  };
+}
+
+export const ru: Dictionary = {
   meta: {
     brand: "ThermoGuard",
   },
@@ -330,6 +504,4 @@ export const ru = {
       escalationStarted: "Запущен протокол эскалации",
     },
   },
-} as const;
-
-export type Dictionary = typeof ru;
+};
