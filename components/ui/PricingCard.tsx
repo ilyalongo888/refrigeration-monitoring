@@ -115,13 +115,8 @@ export function PricingCard({ plan }: { plan: PricingPlan }) {
       <div className="mt-8">
         <Button
           href="#contact"
-          variant={plan.highlighted ? "primary" : "secondary"}
+          variant={plan.highlighted ? "primary" : "outline"}
           fullWidth
-          className={
-            !plan.highlighted
-              ? "border-[#0B1728]/15 text-[#0B1728] hover:border-accent-blue/50"
-              : ""
-          }
         >
           {plan.cta}
         </Button>

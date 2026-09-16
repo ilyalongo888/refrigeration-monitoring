@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
-type Variant = "primary" | "secondary" | "ghost";
+type Variant = "primary" | "secondary" | "outline" | "ghost";
 type Size = "md" | "lg";
 
 interface ButtonProps {
@@ -25,6 +25,8 @@ const variants: Record<Variant, string> = {
     "bg-accent-cyan text-[#03141C] hover:bg-accent-cyan/90 shadow-glow-sm active:bg-accent-cyan/80",
   secondary:
     "bg-transparent text-text-primary border border-line hover:border-accent-cyan/50 hover:bg-white/5",
+  outline:
+    "bg-transparent text-[#0B1728] border border-[#0B1728]/15 hover:border-accent-blue/50 hover:bg-slate-50",
   ghost:
     "bg-transparent text-accent-cyan hover:text-accent-cyan/80 px-0",
 };
