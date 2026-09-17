@@ -9,11 +9,23 @@ import React, {
 } from "react";
 import { ru } from "@/locales/ru";
 import { lv } from "@/locales/lv";
+import { en } from "@/locales/en";
 import type { Dictionary } from "@/locales/ru";
 
-export type Lang = "ru" | "lv";
+// To add another language (e.g. Estonian "et" or Lithuanian "lt"):
+// 1. Create locales/<code>.ts exporting `export const <code>: Dictionary = {...}`
+// 2. Import it above and add it to `dictionaries` and `LANGUAGES` below.
+export type Lang = "ru" | "lv" | "en";
 
-const dictionaries: Record<Lang, Dictionary> = { ru, lv };
+const dictionaries: Record<Lang, Dictionary> = { ru, lv, en };
+
+export const LANGUAGES: { code: Lang; label: string }[] = [
+  { code: "ru", label: "Русский" },
+  { code: "lv", label: "Latviešu" },
+  { code: "en", label: "English" },
+];
+
+const LANG_CODES = LANGUAGES.map((l) => l.code);
 
 const STORAGE_KEY = "thermoguard-lang";
 
@@ -33,8 +45,8 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     try {
       const stored = window.localStorage.getItem(STORAGE_KEY);
-      if (stored === "ru" || stored === "lv") {
-        setLangState(stored);
+      if (stored && (LANG_CODES as string[]).includes(stored)) {
+        setLangState(stored as Lang);
       }
     } catch {
       // localStorage unavailable — keep default

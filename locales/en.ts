@@ -1,0 +1,351 @@
+import type { Dictionary } from "./ru";
+
+export const en: Dictionary = {
+  meta: {
+    brand: "ThermoGuard",
+  },
+  nav: {
+    how: "How It Works",
+    pricing: "Pricing",
+    calculator: "Calculator",
+    faq: "FAQ",
+    cta: "Calculate Cost",
+  },
+  hero: {
+    badge: "24/7 MONITORING",
+    h1: "Know about a problem {{sooner}} — before it becomes a {{loss}}",
+    subtitle:
+      "ThermoGuard monitors your refrigeration equipment around the clock, detects temperature deviations, and automatically notifies your team and service company about the issue.",
+    ctaPrimary: "Calculate Cost",
+    ctaSecondary: "See How It Works",
+    microcopy: [
+      "Up to 25 sensors per module",
+      "Telegram notifications",
+      "Remote access",
+      "24/7 monitoring",
+    ],
+  },
+  dashboard: {
+    title: "THERMOGUARD MONITORING",
+    online: "SYSTEM ONLINE",
+    metrics: {
+      sensors: "ACTIVE SENSORS",
+      normal: "NORMAL",
+      alerts: "ACTIVE ALERT",
+    },
+    tableHeaders: {
+      equipment: "Equipment",
+      temperature: "Temperature",
+      target: "Target",
+      status: "Status",
+    },
+    equipment: [
+      { name: "Cold Room 01", temp: "+3.2°C", target: "+2…+5°C", status: "normal" },
+      { name: "Cold Room 02", temp: "+4.1°C", target: "+2…+5°C", status: "normal" },
+      { name: "Freezer 01", temp: "-18.6°C", target: "-18°C", status: "normal" },
+      { name: "Freezer 02", temp: "-11.8°C", target: "-18°C", status: "alert" },
+    ],
+    statusLabels: {
+      normal: "Normal",
+      alert: "Alert",
+    },
+    incident: {
+      label: "ACTIVE ALERT",
+      unit: "Freezer 02",
+      timeline: [
+        { time: "02:17", text: "Temperature exceeded the allowed threshold" },
+        { time: "02:17", text: "Telegram notification sent" },
+        { time: "02:18", text: "Responsible employee notified" },
+        { time: "02:18", text: "Service company notified" },
+        { time: "02:20", text: "Readings continue updating" },
+        { time: "02:22", text: "Parameter adjusted remotely" },
+      ],
+    },
+    lastCheck: "Last system check: 14 seconds ago",
+  },
+  howItWorks: {
+    heading: "How ThermoGuard Works",
+    subtitle: "From a sensor on your equipment to a notification for whoever needs to respond.",
+    steps: [
+      {
+        number: "01",
+        title: "CONNECTION",
+        text: "Sensors are attached to your refrigeration equipment and send data to a central module.",
+      },
+      {
+        number: "02",
+        title: "MONITORING",
+        text: "The system continuously tracks temperature and other available parameters.",
+      },
+      {
+        number: "03",
+        title: "DETECTION",
+        text: "ThermoGuard automatically detects when readings go outside the allowed range.",
+      },
+      {
+        number: "04",
+        title: "NOTIFICATION",
+        text: "A Telegram bot instantly notifies the responsible staff.",
+      },
+      {
+        number: "05",
+        title: "INFORMATION HANDOFF",
+        text: "If configured, the client's existing service company also receives the notification.",
+      },
+      {
+        number: "06",
+        title: "ACTION",
+        text: "Repairs or technical action are carried out by the client's own engineer or their existing service company.",
+      },
+    ],
+  },
+  pricingModel: {
+    heading: "One product. A simple model.",
+    subtitle: "Equipment and setup cost is separate from the monthly monitoring license.",
+    equipment: {
+      label: "EQUIPMENT & SETUP",
+      price: "€1,500",
+      period: "one-time",
+      included: [
+        "central module",
+        "installation",
+        "system setup and configuration",
+        "Telegram notification setup",
+        "support for up to 25 connected sensors",
+        "system launch",
+      ],
+      installment: "Installment payment available over up to 24 months.",
+    },
+    monitoring: {
+      label: "MONTHLY MONITORING LICENSE",
+      price: "€20–€30",
+      period: "per active sensor / month",
+      included: [
+        "24/7 monitoring",
+        "reading history",
+        "automatic alerts",
+        "remote access to parameters",
+        "dashboard",
+        "Telegram notifications",
+        "handoff of information to your service company",
+        "remote control for supported equipment",
+      ],
+      note: "License cost depends on equipment type, connection configuration, and the number of monitored parameters.",
+    },
+    cta: "Calculate Cost",
+  },
+  costExamples: {
+    heading: "Illustrative cost examples",
+    items: [
+      { label: "Small site", sensors: "5 sensors", price: "€100–€150 / month" },
+      { label: "Medium site", sensors: "15 sensors", price: "€300–€450 / month" },
+      { label: "Large site", sensors: "25 sensors", price: "€500–€750 / month" },
+    ],
+    footnote: "* initial equipment and setup — €1,500, one-time.",
+  },
+  serviceCompany: {
+    heading: "No need to change your service company",
+    paragraphs: [
+      "ThermoGuard works alongside your existing service infrastructure.",
+      "On a critical deviation, a notification can be sent automatically to your technical staff and the company that already services your refrigeration equipment.",
+    ],
+    highlight: "We don't replace your service partner — we help them find out about the problem sooner.",
+  },
+  remoteControl: {
+    heading: "Not just monitoring",
+    subtitle:
+      "Depending on the type of refrigeration equipment, ThermoGuard can support remote adjustment of operating parameters.",
+    mockup: {
+      unit: "Freezer Unit 02",
+      currentLabel: "Current temperature",
+      current: "-11.8°C",
+      setPointLabel: "Set point",
+      setPoint: "-18°C",
+      options: ["-19°C", "-18°C", "-17°C"],
+      apply: "Apply Change",
+    },
+    note: "Available control functions depend on the equipment model and connection type. We do not guarantee remote control for all equipment.",
+  },
+  calculator: {
+    heading: "Calculate the cost for your site",
+    subtitle: "This is a preliminary estimate for reference — our specialist will prepare the exact quote.",
+    stepLabel: "Step",
+    of: "of",
+    back: "Back",
+    next: "Next",
+    steps: {
+      objects: {
+        question: "How many sites do you have?",
+        options: ["1", "2–5", "6+"],
+      },
+      sensors: {
+        question: "How many refrigeration units or monitored points?",
+        plus: "25+",
+        unitLabel: "sensors",
+      },
+      equipment: {
+        question: "Equipment type",
+        options: [
+          "Cold rooms",
+          "Freezer rooms",
+          "Refrigerated display cases",
+          "Industrial refrigeration equipment",
+          "Mixed equipment",
+          "Other",
+        ],
+      },
+      remote: {
+        question: "Do you need remote control?",
+        options: ["Yes", "No", "Not sure"],
+      },
+    },
+    result: {
+      heading: "Preliminary estimate",
+      setupLabel: "Equipment & setup",
+      setupPrice: "€1,500 one-time",
+      installment: "installment payment available over up to 24 months",
+      sensorsLabel: "Number of active sensors",
+      monthlyLabel: "Estimated monthly cost",
+      monthlyUnit: "/ month",
+      monthlyNote: "The exact cost depends on equipment type and connection configuration.",
+      editCta: "Edit parameters",
+    },
+    leadForm: {
+      heading: "Get an exact quote",
+      fields: {
+        name: "Name",
+        company: "Company name",
+        phone: "Phone",
+        email: "Email",
+      },
+      submit: "Get an exact quote",
+    },
+    success: {
+      title: "Thank you. We've received your site information.",
+      text: "Our specialist will contact you to confirm the technical configuration and prepare an exact quote.",
+    },
+  },
+  targetCustomers: {
+    heading: "For businesses where temperature matters",
+    primaryLabel: "Primary industries",
+    primary: [
+      "Cold storage warehouses",
+      "Food production facilities",
+      "Meat processing",
+      "Fish processing",
+      "Dairy producers",
+      "Frozen food",
+      "Food distributors",
+      "Supermarkets",
+      "Pharmaceutical warehouses",
+      "Commercial refrigeration sites",
+    ],
+    secondaryLabel: "Also a good fit for",
+    secondary: [
+      "Restaurants",
+      "Hotels",
+      "Catering",
+      "Confectionery production",
+      "Flower warehouses and flower logistics",
+    ],
+  },
+  businessScenarios: {
+    heading: "Where ThermoGuard can prevent serious losses",
+    subtitle: "A few typical situations where early detection of a temperature deviation is critical.",
+    tag: "TYPICAL SCENARIO",
+    scenarios: [
+      {
+        industry: "Cold Storage Warehouse",
+        title: "Over €150,000 of product could have been left without refrigeration",
+        body: "A company rents a cold storage warehouse for six months to temporarily store product worth more than €150,000. Overnight, the site loses power. There's no staff on site, so without remote monitoring the problem might only be discovered hours later. ThermoGuard detects the temperature rise once it exceeds the set range and automatically notifies the responsible staff and the service company.",
+        metrics: [
+          { value: "€150,000+", label: "product value at risk" },
+          { value: "24/7", label: "automatic monitoring" },
+        ],
+        bottomLine: "Learn about the problem in the first few minutes — not on the next site visit.",
+      },
+      {
+        industry: "Confectionery Production",
+        title: "Over 1,000 cakes before the weekend",
+        body: "A confectionery producer is preparing a large batch of orders for the weekend. Cold rooms hold over 1,000 cakes and desserts. On the night between Friday and Saturday, a technical fault develops in the refrigeration system and the temperature starts drifting outside the set range. Without remote monitoring, the problem could go unnoticed until morning. ThermoGuard detects the temperature change and sends a Telegram notification to the responsible staff and the technical company.",
+        metrics: [
+          { value: "1,000+", label: "finished products" },
+          { value: "Fri → Sat", label: "critical night before deliveries" },
+        ],
+        bottomLine: "The chance to respond overnight, while the product and customer orders can still be saved.",
+      },
+      {
+        industry: "Flower Warehouse",
+        title: "A few hours at the wrong temperature can ruin a shipment",
+        body: "A wholesale flower supplier receives large batches of fresh product. Flowers are stored in cold rooms until distribution to shops and florists. Overnight, the temperature in one of the rooms starts gradually rising due to an equipment fault. The warehouse is closed, with no staff present. ThermoGuard keeps monitoring the readings and, once the set threshold is exceeded, automatically sends a notification to the responsible employee and the service company.",
+        metrics: [
+          { value: "24/7", label: "monitoring with no staff present" },
+          { value: "Quality risk", label: "and reduced shelf life" },
+        ],
+        bottomLine: "Catch the problem before the workday starts — not after product quality has already suffered.",
+      },
+    ],
+  },
+  faq: {
+    heading: "Frequently Asked Questions",
+    items: [
+      {
+        q: "Do I need to change my existing service company?",
+        a: "No. ThermoGuard can notify your current service company.",
+      },
+      {
+        q: "How many sensors does the base module support?",
+        a: "Up to 25 sensors.",
+      },
+      {
+        q: "Can I connect more than 25 sensors?",
+        a: "Yes. For larger sites, the configuration is calculated individually.",
+      },
+      {
+        q: "Can I pay for the equipment in installments?",
+        a: "Yes. Installment payment is available over up to 24 months.",
+      },
+      {
+        q: "How much does the monthly subscription cost?",
+        a: "Roughly €20–€30 per active sensor per month. The exact price depends on the equipment and configuration.",
+      },
+      {
+        q: "Can I adjust the temperature remotely?",
+        a: "For supported equipment, remote adjustment of parameters is possible.",
+      },
+      {
+        q: "What happens during an emergency?",
+        a: "ThermoGuard detects the deviation and sends a notification to the responsible staff and, if configured, the client's existing service company.",
+      },
+      {
+        q: "Does ThermoGuard carry out repairs itself?",
+        a: "No. Repairs are carried out by the client's own technical staff or their service contractor.",
+      },
+    ],
+  },
+  finalCta: {
+    label: "24/7 REFRIGERATION MONITORING",
+    heading: "How long would it take your company to notice a refrigeration equipment failure tonight?",
+    text: "Find out how round-the-clock remote monitoring can help protect your business.",
+    ctaPrimary: "Calculate Cost",
+    ctaSecondary: "See How It Works",
+  },
+  footer: {
+    tagline: "ThermoGuard is a monitoring system for commercial refrigeration equipment.",
+    linksHeading: "Navigation",
+    links: {
+      how: "How It Works",
+      pricing: "Pricing",
+      calculator: "Calculator",
+      faq: "FAQ",
+      privacy: "Privacy Policy",
+      terms: "Terms of Use",
+    },
+    contactsHeading: "Contact",
+    contactsFallback: "Reach us through the cost calculator form on the site.",
+    email: "",
+    phone: "",
+    disclaimer: "ThermoGuard is not an emergency repair service. Equipment repairs are carried out by the client's technical staff or their service company.",
+    rights: "All rights reserved.",
+  },
+};

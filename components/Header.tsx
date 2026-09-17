@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { Menu, X, Snowflake } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { Menu, X, Snowflake, ChevronDown } from "lucide-react";
 import { Button } from "./ui/Button";
-import { useLanguage } from "@/context/LanguageContext";
+import { useLanguage, LANGUAGES } from "@/context/LanguageContext";
 import type { Lang } from "@/context/LanguageContext";
 
 const navAnchors = [
@@ -86,7 +86,7 @@ export function Header() {
                 {t.nav[item.key]}
               </a>
             ))}
-            <div className="mt-2 flex items-center justify-between px-2">
+            <div className="mt-2 flex items-center px-2">
               <LangSwitch lang={lang} setLang={setLang} />
             </div>
             <Button href="#calculator" size="md" className="mt-3" onClick={handleNavClick}>
@@ -106,22 +106,70 @@ function LangSwitch({
   lang: Lang;
   setLang: (l: Lang) => void;
 }) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+  const current = LANGUAGES.find((l) => l.code === lang) ?? LANGUAGES[0];
+
+  useEffect(() => {
+    if (!open) return;
+    const onClickOutside = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    };
+    const onEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("mousedown", onClickOutside);
+    document.addEventListener("keydown", onEscape);
+    return () => {
+      document.removeEventListener("mousedown", onClickOutside);
+      document.removeEventListener("keydown", onEscape);
+    };
+  }, [open]);
+
   return (
-    <div className="flex items-center gap-1 rounded-full border border-line p-0.5 text-xs font-medium">
-      {(["ru", "lv"] as Lang[]).map((l) => (
-        <button
-          key={l}
-          onClick={() => setLang(l)}
-          aria-pressed={lang === l}
-          className={`rounded-full px-2.5 py-1 uppercase transition-colors ${
-            lang === l
-              ? "bg-accent-cyan text-[#03141C]"
-              : "text-text-secondary hover:text-text-primary"
-          }`}
+    <div ref={ref} className="relative">
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        aria-haspopup="listbox"
+        aria-expanded={open}
+        className="flex items-center gap-1.5 rounded-full border border-line px-3 py-1.5 text-xs font-medium uppercase text-text-secondary transition-colors hover:text-text-primary"
+      >
+        {current.code}
+        <ChevronDown
+          className={`h-3 w-3 transition-transform ${open ? "rotate-180" : ""}`}
+          strokeWidth={2}
+        />
+      </button>
+
+      {open && (
+        <div
+          role="listbox"
+          className="absolute right-0 top-full z-50 mt-2 min-w-[140px] overflow-hidden rounded-btn border border-line bg-[#0B1728] py-1 shadow-card-lift"
         >
-          {l}
-        </button>
-      ))}
+          {LANGUAGES.map((l) => (
+            <button
+              key={l.code}
+              role="option"
+              aria-selected={lang === l.code}
+              onClick={() => {
+                setLang(l.code);
+                setOpen(false);
+              }}
+              className={`flex w-full items-center justify-between gap-3 px-3.5 py-2 text-left text-sm transition-colors ${
+                lang === l.code
+                  ? "text-accent-cyan"
+                  : "text-text-secondary hover:bg-white/5 hover:text-text-primary"
+              }`}
+            >
+              <span>{l.label}</span>
+              <span className="text-xs uppercase text-text-secondary/60">{l.code}</span>
+            </button>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
