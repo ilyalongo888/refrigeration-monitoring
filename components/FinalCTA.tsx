@@ -20,10 +20,10 @@ export function FinalCTA() {
           {t.finalCta.text}
         </p>
         <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <Button href="#contact" size="lg">
+          <Button href="#calculator" size="lg">
             {t.finalCta.ctaPrimary}
           </Button>
-          <Button href="#contact" variant="secondary" size="lg">
+          <Button href="#how-it-works" variant="secondary" size="lg">
             {t.finalCta.ctaSecondary}
           </Button>
         </div>

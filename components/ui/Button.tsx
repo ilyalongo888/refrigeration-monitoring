@@ -15,6 +15,7 @@ interface ButtonProps {
   type?: "button" | "submit";
   className?: string;
   fullWidth?: boolean;
+  disabled?: boolean;
 }
 
 const base =
@@ -46,6 +47,7 @@ export function Button({
   type = "button",
   className = "",
   fullWidth = false,
+  disabled = false,
 }: ButtonProps) {
   const classes = `${base} ${variants[variant]} ${
     variant !== "ghost" ? sizes[size] : "py-1"
@@ -60,14 +62,14 @@ export function Button({
 
   if (href) {
     return (
-      <Link href={href} className={classes}>
+      <Link href={href} className={classes} onClick={onClick}>
         {content}
       </Link>
     );
   }
 
   return (
-    <button type={type} onClick={onClick} className={classes}>
+    <button type={type} onClick={onClick} disabled={disabled} className={classes}>
       {content}
     </button>
   );

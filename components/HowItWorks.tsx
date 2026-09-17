@@ -1,10 +1,10 @@
 "use client";
 
-import { Thermometer, ScanSearch, BellRing, TrendingUp, CheckCircle2 } from "lucide-react";
+import { Plug, Thermometer, ScanSearch, BellRing, Share2, Wrench } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import { SectionHeading } from "./ui/SectionHeading";
 
-const icons = [Thermometer, ScanSearch, BellRing, TrendingUp, CheckCircle2];
+const icons = [Plug, Thermometer, ScanSearch, BellRing, Share2, Wrench];
 
 export function HowItWorks() {
   const { t } = useLanguage();
@@ -22,7 +22,7 @@ export function HowItWorks() {
         {/* Desktop horizontal timeline */}
         <div className="relative mt-16 hidden lg:flex">
           <div className="absolute left-[10%] right-[10%] top-6 h-px bg-gradient-to-r from-transparent via-accent-cyan/40 to-transparent" />
-          <div className="grid w-full grid-cols-5 gap-4">
+          <div className="grid w-full grid-cols-6 gap-3">
             {steps.map((step, i) => {
               const Icon = icons[i];
               const isLast = i === steps.length - 1;

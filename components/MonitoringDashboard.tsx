@@ -40,8 +40,8 @@ export function MonitoringDashboard() {
 
           {/* Metrics */}
           <div className="mt-5 grid grid-cols-3 gap-2.5 sm:gap-3">
-            <MetricCard value="24" label={d.metrics.objects} />
-            <MetricCard value="23" label={d.metrics.normal} tone="normal" />
+            <MetricCard value="15" label={d.metrics.sensors} />
+            <MetricCard value="14" label={d.metrics.normal} tone="normal" />
             <MetricCard value="1" label={d.metrics.alerts} tone="alert" />
           </div>
 

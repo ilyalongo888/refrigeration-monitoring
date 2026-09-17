@@ -8,10 +8,9 @@ import type { Lang } from "@/context/LanguageContext";
 
 const navAnchors = [
   { key: "how", href: "#how-it-works" },
-  { key: "solutions", href: "#control-levels" },
   { key: "pricing", href: "#pricing" },
-  { key: "diagnostics", href: "#diagnostics" },
-  { key: "contacts", href: "#contact" },
+  { key: "calculator", href: "#calculator" },
+  { key: "faq", href: "#faq" },
 ] as const;
 
 export function Header() {
@@ -60,7 +59,7 @@ export function Header() {
 
         <div className="hidden items-center gap-5 lg:flex">
           <LangSwitch lang={lang} setLang={setLang} />
-          <Button href="#contact" size="md">
+          <Button href="#calculator" size="md">
             {t.nav.cta}
           </Button>
         </div>
@@ -90,7 +89,7 @@ export function Header() {
             <div className="mt-2 flex items-center justify-between px-2">
               <LangSwitch lang={lang} setLang={setLang} />
             </div>
-            <Button href="#contact" size="md" className="mt-3" onClick={handleNavClick}>
+            <Button href="#calculator" size="md" className="mt-3" onClick={handleNavClick}>
               {t.nav.cta}
             </Button>
           </nav>

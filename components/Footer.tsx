@@ -3,6 +3,10 @@
 import { Snowflake, Mail, Phone } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
+// TODO: replace with real company contact details before launch.
+const REAL_EMAIL = "";
+const REAL_PHONE = "";
+
 export function Footer() {
   const { t } = useLanguage();
   const f = t.footer;
@@ -11,11 +15,14 @@ export function Footer() {
   const links = [
     { label: f.links.how, href: "#how-it-works" },
     { label: f.links.pricing, href: "#pricing" },
-    { label: f.links.diagnostics, href: "#diagnostics" },
+    { label: f.links.calculator, href: "#calculator" },
+    { label: f.links.faq, href: "#faq" },
     { label: f.links.privacy, href: "#" },
     { label: f.links.terms, href: "#" },
-    { label: f.links.contacts, href: "#contact" },
   ];
+
+  const hasEmail = REAL_EMAIL.length > 0;
+  const hasPhone = REAL_PHONE.length > 0;
 
   return (
     <footer className="border-t border-line bg-[#07111F] py-14">
@@ -55,20 +62,30 @@ export function Footer() {
             <p className="text-xs font-semibold uppercase tracking-[0.14em] text-text-secondary">
               {f.contactsHeading}
             </p>
-            <ul className="mt-4 space-y-2.5 text-sm text-text-secondary">
-              <li className="flex items-center gap-2">
-                <Mail className="h-4 w-4 text-accent-cyan" strokeWidth={1.8} />
-                <a href={`mailto:${f.email}`} className="hover:text-text-primary">
-                  {f.email}
-                </a>
-              </li>
-              <li className="flex items-center gap-2">
-                <Phone className="h-4 w-4 text-accent-cyan" strokeWidth={1.8} />
-                <a href={`tel:${f.phone.replace(/\s/g, "")}`} className="hover:text-text-primary">
-                  {f.phone}
-                </a>
-              </li>
-            </ul>
+            {hasEmail || hasPhone ? (
+              <ul className="mt-4 space-y-2.5 text-sm text-text-secondary">
+                {hasEmail && (
+                  <li className="flex items-center gap-2">
+                    <Mail className="h-4 w-4 text-accent-cyan" strokeWidth={1.8} />
+                    <a href={`mailto:${REAL_EMAIL}`} className="hover:text-text-primary">
+                      {REAL_EMAIL}
+                    </a>
+                  </li>
+                )}
+                {hasPhone && (
+                  <li className="flex items-center gap-2">
+                    <Phone className="h-4 w-4 text-accent-cyan" strokeWidth={1.8} />
+                    <a href={`tel:${REAL_PHONE.replace(/\s/g, "")}`} className="hover:text-text-primary">
+                      {REAL_PHONE}
+                    </a>
+                  </li>
+                )}
+              </ul>
+            ) : (
+              <p className="mt-4 max-w-xs text-sm leading-relaxed text-text-secondary">
+                {f.contactsFallback}
+              </p>
+            )}
           </div>
         </div>
 

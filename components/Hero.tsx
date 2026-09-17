@@ -6,6 +6,7 @@ import { Button } from "./ui/Button";
 import { StatusBadge } from "./ui/StatusBadge";
 import { Highlighted } from "./ui/Highlighted";
 import { MonitoringDashboard } from "./MonitoringDashboard";
+import { track } from "@/lib/analytics";
 
 export function Hero() {
   const { t } = useLanguage();
@@ -36,7 +37,11 @@ export function Hero() {
           </p>
 
           <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <Button href="#contact" size="lg">
+            <Button
+              href="#calculator"
+              size="lg"
+              onClick={() => track("hero_cta_clicked")}
+            >
               {t.hero.ctaPrimary}
             </Button>
             <Button href="#how-it-works" variant="secondary" size="lg" icon>
@@ -44,7 +49,17 @@ export function Hero() {
             </Button>
           </div>
 
-          <p className="mt-7 text-sm text-text-secondary/80">{t.hero.proofLine}</p>
+          <div className="mt-7 flex flex-wrap gap-2">
+            {t.hero.microcopy.map((item, i) => (
+              <span
+                key={i}
+                className="inline-flex items-center gap-1.5 rounded-full border border-line bg-white/[0.02] px-3 py-1.5 text-xs text-text-secondary"
+              >
+                <span className="h-1 w-1 rounded-full bg-accent-cyan" />
+                {item}
+              </span>
+            ))}
+          </div>
         </motion.div>
 
         <div className="flex justify-center lg:justify-end">

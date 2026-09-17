@@ -1,20 +1,7 @@
-export interface PricingPlan {
-  label: string;
-  badge: string | null;
-  title: string;
-  price: string;
-  period: string;
-  description: string;
-  featuresIntro?: string;
-  features: string[];
-  extra: string | null;
-  cta: string;
-  highlighted: boolean;
-}
-
 export interface EquipmentRow {
   name: string;
   temp: string;
+  target: string;
   status: "normal" | "alert";
 }
 
@@ -23,16 +10,33 @@ export interface TimelineItem {
   text: string;
 }
 
+export interface ScenarioMetric {
+  value: string;
+  label: string;
+}
+
+export interface Scenario {
+  industry: string;
+  title: string;
+  body: string;
+  metrics: [ScenarioMetric, ScenarioMetric];
+  bottomLine: string;
+}
+
+export interface FaqItem {
+  q: string;
+  a: string;
+}
+
 export interface Dictionary {
   meta: {
     brand: string;
   };
   nav: {
     how: string;
-    solutions: string;
     pricing: string;
-    diagnostics: string;
-    contacts: string;
+    calculator: string;
+    faq: string;
     cta: string;
   };
   hero: {
@@ -41,19 +45,20 @@ export interface Dictionary {
     subtitle: string;
     ctaPrimary: string;
     ctaSecondary: string;
-    proofLine: string;
+    microcopy: string[];
   };
   dashboard: {
     title: string;
     online: string;
     metrics: {
-      objects: string;
+      sensors: string;
       normal: string;
       alerts: string;
     };
     tableHeaders: {
       equipment: string;
       temperature: string;
+      target: string;
       status: string;
     };
     equipment: EquipmentRow[];
@@ -68,55 +73,109 @@ export interface Dictionary {
     };
     lastCheck: string;
   };
-  problem: {
-    heading: string;
-    cards: { title: string; text: string }[];
-    statement: string;
-  };
   howItWorks: {
     heading: string;
     subtitle: string;
     steps: { number: string; title: string; text: string }[];
   };
-  controlLevels: {
-    heading: string;
-    levels: { label: string; title: string; flow: string }[];
-  };
-  pricing: {
+  pricingModel: {
     heading: string;
     subtitle: string;
-    plans: PricingPlan[];
-  };
-  diagnostics: {
-    heading: string;
-    subheading: string;
-    text: string;
-    included: string[];
-    price: string;
+    equipment: {
+      label: string;
+      price: string;
+      period: string;
+      included: string[];
+      installment: string;
+    };
+    monitoring: {
+      label: string;
+      price: string;
+      period: string;
+      included: string[];
+      note: string;
+    };
     cta: string;
-    chartTitle: string;
-    chartNormalZone: string;
-    tooltip: string;
   };
-  industries: {
+  costExamples: {
     heading: string;
-    items: string[];
+    items: { label: string; sensors: string; price: string }[];
+    footnote: string;
   };
-  dashboardDemo: {
+  serviceCompany: {
     heading: string;
-    tableTitle: string;
-    incidentTitle: string;
-    unit: string;
-    currentTempLabel: string;
-    targetLabel: string;
-    target: string;
-    status: string;
-    timeline: TimelineItem[];
-    inProgress: string;
+    paragraphs: string[];
+    highlight: string;
   };
-  benefits: {
+  remoteControl: {
     heading: string;
-    cards: { title: string; text: string }[];
+    subtitle: string;
+    mockup: {
+      unit: string;
+      currentLabel: string;
+      current: string;
+      setPointLabel: string;
+      setPoint: string;
+      options: string[];
+      apply: string;
+    };
+    note: string;
+  };
+  calculator: {
+    heading: string;
+    subtitle: string;
+    stepLabel: string;
+    of: string;
+    back: string;
+    next: string;
+    steps: {
+      objects: { question: string; options: string[] };
+      sensors: { question: string; plus: string; unitLabel: string };
+      equipment: { question: string; options: string[] };
+      remote: { question: string; options: string[] };
+    };
+    result: {
+      heading: string;
+      setupLabel: string;
+      setupPrice: string;
+      installment: string;
+      sensorsLabel: string;
+      monthlyLabel: string;
+      monthlyUnit: string;
+      monthlyNote: string;
+      editCta: string;
+    };
+    leadForm: {
+      heading: string;
+      fields: {
+        name: string;
+        company: string;
+        phone: string;
+        email: string;
+      };
+      submit: string;
+    };
+    success: {
+      title: string;
+      text: string;
+    };
+  };
+  targetCustomers: {
+    heading: string;
+    primaryLabel: string;
+    primary: string[];
+    secondaryLabel: string;
+    secondary: string[];
+  };
+  businessScenarios: {
+    heading: string;
+    subtitle: string;
+    tag: string;
+    scenarios: Scenario[];
+  };
+  faq: {
+    heading: string;
+    items: FaqItem[];
   };
   finalCta: {
     label: string;
@@ -125,50 +184,23 @@ export interface Dictionary {
     ctaPrimary: string;
     ctaSecondary: string;
   };
-  contactForm: {
-    heading: string;
-    subheading: string;
-    fields: {
-      name: string;
-      company: string;
-      phone: string;
-      email: string;
-      units: string;
-      businessType: string;
-    };
-    businessTypes: string[];
-    selectPlaceholder: string;
-    submit: string;
-    successTitle: string;
-    successText: string;
-  };
   footer: {
     tagline: string;
     linksHeading: string;
     links: {
       how: string;
       pricing: string;
-      diagnostics: string;
+      calculator: string;
+      faq: string;
       privacy: string;
       terms: string;
-      contacts: string;
     };
     contactsHeading: string;
+    contactsFallback: string;
     email: string;
     phone: string;
     disclaimer: string;
     rights: string;
-  };
-  common: {
-    liveLabel: string;
-    onlineLabel: string;
-    connectedLabel: string;
-    lastUpdate: string;
-    microcopy: {
-      sensorConnected: string;
-      thresholdExceeded: string;
-      escalationStarted: string;
-    };
   };
 }
 
@@ -178,330 +210,345 @@ export const ru: Dictionary = {
   },
   nav: {
     how: "Как это работает",
-    solutions: "Решения",
-    pricing: "Тарифы",
-    diagnostics: "Диагностика",
-    contacts: "Контакты",
-    cta: "Получить консультацию",
+    pricing: "Стоимость",
+    calculator: "Калькулятор",
+    faq: "Вопросы",
+    cta: "Рассчитать стоимость",
   },
   hero: {
     badge: "МОНИТОРИНГ 24/7",
     h1: "Узнайте о проблеме {{раньше}}, чем она станет {{убытком}}",
     subtitle:
-      "Мы круглосуточно контролируем температурный режим холодильного оборудования, фиксируем критические отклонения и помогаем начать устранение проблемы до того, как она приведёт к серьёзным потерям.",
-    ctaPrimary: "Получить бесплатную консультацию",
-    ctaSecondary: "Посмотреть, как это работает",
-    proofLine: "24/7 контроль • автоматические уведомления • история инцидентов",
+      "ThermoGuard круглосуточно контролирует холодильное оборудование, фиксирует температурные отклонения и автоматически уведомляет вашу команду и обслуживающую компанию о проблеме.",
+    ctaPrimary: "Рассчитать стоимость",
+    ctaSecondary: "Посмотреть, как работает система",
+    microcopy: [
+      "До 25 сенсоров на одном модуле",
+      "Telegram-уведомления",
+      "Удалённый доступ",
+      "Мониторинг 24/7",
+    ],
   },
   dashboard: {
-    title: "REFRIGERATION CONTROL",
+    title: "THERMOGUARD MONITORING",
     online: "SYSTEM ONLINE",
     metrics: {
-      objects: "ОБЪЕКТОВ ПОД КОНТРОЛЕМ",
-      normal: "НОРМА",
+      sensors: "АКТИВНЫХ СЕНСОРОВ",
+      normal: "В НОРМЕ",
       alerts: "АКТИВНАЯ ТРЕВОГА",
     },
     tableHeaders: {
       equipment: "Оборудование",
       temperature: "Температура",
+      target: "Целевая",
       status: "Статус",
     },
     equipment: [
-      { name: "Холодильная камера 01", temp: "+3.2°C", status: "normal" },
-      { name: "Холодильная камера 02", temp: "+4.1°C", status: "normal" },
-      { name: "Морозильная камера 01", temp: "-18.6°C", status: "normal" },
-      { name: "Морозильная камера 02", temp: "-11.8°C", status: "alert" },
+      { name: "Холодильная камера 01", temp: "+3.2°C", target: "+2…+5°C", status: "normal" },
+      { name: "Холодильная камера 02", temp: "+4.1°C", target: "+2…+5°C", status: "normal" },
+      { name: "Морозильная камера 01", temp: "-18.6°C", target: "-18°C", status: "normal" },
+      { name: "Морозильная камера 02", temp: "-11.8°C", target: "-18°C", status: "alert" },
     ],
     statusLabels: {
       normal: "Норма",
       alert: "Тревога",
     },
     incident: {
-      label: "ACTIVE INCIDENT",
+      label: "ACTIVE ALERT",
       unit: "Морозильная камера 02",
       timeline: [
-        { time: "02:17", text: "Обнаружено превышение температуры" },
-        { time: "02:18", text: "Ответственное лицо уведомлено" },
-        { time: "02:23", text: "Ответ не получен" },
-        { time: "02:24", text: "Начата эскалация" },
-        { time: "02:31", text: "Вызван сервисный инженер" },
+        { time: "02:17", text: "Температура превысила допустимый порог" },
+        { time: "02:17", text: "Telegram-уведомление отправлено" },
+        { time: "02:18", text: "Ответственный сотрудник уведомлён" },
+        { time: "02:18", text: "Сервисная компания уведомлена" },
+        { time: "02:20", text: "Показания продолжают обновляться" },
+        { time: "02:22", text: "Параметр скорректирован удалённо" },
       ],
     },
     lastCheck: "Последняя проверка системы: 14 секунд назад",
   },
-  problem: {
-    heading: "Поломка холодильного оборудования может очень быстро привести к серьёзным потерям",
-    cards: [
-      {
-        title: "Поломка оборудования",
-        text: "Холодильная установка может выйти из строя ночью или в выходной день, когда этого никто не заметит.",
-      },
-      {
-        title: "Позднее обнаружение",
-        text: "Чем дольше температура находится за допустимыми пределами, тем выше риск порчи продукции.",
-      },
-      {
-        title: "Отсутствие контроля",
-        text: "Обычная обслуживающая компания подключается только после того, как клиент уже обнаружил проблему.",
-      },
-    ],
-    statement: "Наша задача — обнаружить проблему {{раньше}}.",
-  },
   howItWorks: {
-    heading: "От обнаружения проблемы до её устранения",
-    subtitle: "Пять этапов круглосуточного контроля.",
+    heading: "Как работает ThermoGuard",
+    subtitle: "От сенсора на оборудовании до уведомления тех, кто должен отреагировать.",
     steps: [
       {
         number: "01",
-        title: "МОНИТОРИНГ",
-        text: "Датчики круглосуточно контролируют температуру оборудования.",
+        title: "ПОДКЛЮЧЕНИЕ",
+        text: "Сенсоры подключаются к холодильному оборудованию и передают данные в центральный модуль.",
       },
       {
         number: "02",
-        title: "ОБНАРУЖЕНИЕ",
-        text: "Система автоматически фиксирует критические отклонения.",
+        title: "МОНИТОРИНГ",
+        text: "Система круглосуточно отслеживает температуру и другие доступные параметры.",
       },
       {
         number: "03",
-        title: "УВЕДОМЛЕНИЕ",
-        text: "Ответственные лица мгновенно получают уведомление.",
+        title: "ОБНАРУЖЕНИЕ",
+        text: "ThermoGuard автоматически фиксирует выход показателей за допустимые значения.",
       },
       {
         number: "04",
-        title: "ЭСКАЛАЦИЯ",
-        text: "Если никто не реагирует, запускается следующий уровень уведомлений.",
+        title: "УВЕДОМЛЕНИЕ",
+        text: "Telegram-бот мгновенно уведомляет ответственных сотрудников.",
       },
       {
         number: "05",
-        title: "РЕШЕНИЕ",
-        text: "В максимальном пакете мы координируем сервисную компанию и контролируем ситуацию до восстановления нормальной работы.",
+        title: "ПЕРЕДАЧА ИНФОРМАЦИИ",
+        text: "При необходимости уведомление получает действующая сервисная компания клиента.",
+      },
+      {
+        number: "06",
+        title: "ДЕЙСТВИЕ",
+        text: "Ремонт или технические действия выполняет собственный инженер клиента или его существующая сервисная компания.",
       },
     ],
   },
-  controlLevels: {
-    heading: "Вы сами выбираете уровень контроля",
-    levels: [
-      {
-        label: "CONTROL",
-        title: "Мы сообщаем",
-        flow: "Проблема → уведомление",
-      },
-      {
-        label: "PROTECT",
-        title: "Мы контролируем реакцию",
-        flow: "Проблема → уведомление → подтверждение реакции",
-      },
-      {
-        label: "MANAGED RESPONSE",
-        title: "Мы координируем решение",
-        flow: "Проблема → реакция → инженер → восстановление",
-      },
-    ],
+  pricingModel: {
+    heading: "Один продукт. Простая модель.",
+    subtitle: "Стоимость оборудования и подключения отдельно от ежемесячной лицензии мониторинга.",
+    equipment: {
+      label: "ОБОРУДОВАНИЕ И ПОДКЛЮЧЕНИЕ",
+      price: "€1 500",
+      period: "единоразово",
+      included: [
+        "центральный модуль",
+        "внедрение",
+        "настройка и конфигурация системы",
+        "подключение Telegram-уведомлений",
+        "поддержка подключения до 25 сенсоров",
+        "запуск системы",
+      ],
+      installment: "Возможна поэтапная оплата до 24 месяцев.",
+    },
+    monitoring: {
+      label: "ЕЖЕМЕСЯЧНАЯ ЛИЦЕНЗИЯ МОНИТОРИНГА",
+      price: "€20–€30",
+      period: "за активный сенсор / месяц",
+      included: [
+        "мониторинг 24/7",
+        "история показаний",
+        "автоматические alerts",
+        "удалённый доступ к параметрам",
+        "dashboard",
+        "Telegram-уведомления",
+        "передачу информации сервисной компании",
+        "удалённое управление для поддерживаемого оборудования",
+      ],
+      note: "Стоимость лицензии зависит от типа оборудования, конфигурации подключения и объёма контролируемых параметров.",
+    },
+    cta: "Рассчитать стоимость",
   },
-  pricing: {
-    heading: "Выберите необходимый уровень контроля",
-    subtitle: "От автоматического мониторинга до полного управления инцидентом.",
-    plans: [
-      {
-        label: "CONTROL",
-        badge: null,
-        title: "Мониторинг и уведомления",
-        price: "от €149",
-        period: "/ месяц",
-        description: "Мы обнаруживаем проблему и сообщаем вам.",
-        features: [
-          "мониторинг температуры 24/7",
-          "мгновенные уведомления",
-          "уведомление при потере связи",
-          "история температур",
-          "хранение данных",
-          "ежемесячный отчёт",
-          "до 3 агрегатов",
-        ],
-        extra: "Дополнительный агрегат: от €50 / месяц",
-        cta: "Получить расчёт",
-        highlighted: false,
-      },
-      {
-        label: "PROTECT",
-        badge: "ПОПУЛЯРНЫЙ ВЫБОР",
-        title: "Мониторинг + контроль реакции",
-        price: "от €299",
-        period: "/ месяц",
-        description: "Мы обнаруживаем проблему и контролируем, чтобы на неё отреагировали.",
-        featuresIntro: "Всё из CONTROL, а также:",
-        features: [
-          "проверка критического сигнала",
-          "связь с ответственным сотрудником",
-          "подтверждение реакции",
-          "повторные уведомления",
-          "escalation",
-          "журнал инцидентов",
-          "расширенный отчёт",
-          "анализ повторяющихся проблем",
-        ],
-        extra: null,
-        cta: "Заказать консультацию",
-        highlighted: true,
-      },
-      {
-        label: "MANAGED RESPONSE",
-        badge: null,
-        title: "Полное управление инцидентом",
-        price: "от €599",
-        period: "индивидуальный тариф",
-        description: "Мы обнаруживаем проблему и помогаем организовать её устранение.",
-        featuresIntro: "Всё из PROTECT, а также:",
-        features: [
-          "координация аварийной ситуации",
-          "связь с сервисной компанией",
-          "вызов инженера",
-          "передача технической информации",
-          "контроль времени прибытия",
-          "контроль ремонта",
-          "контроль восстановления температуры",
-          "отчёт по каждому incident",
-          "priority support",
-        ],
-        extra: null,
-        cta: "Обсудить подключение",
-        highlighted: false,
-      },
-    ],
-  },
-  diagnostics: {
-    heading: "Не готовы сразу подключать постоянный мониторинг?",
-    subheading: "Начните с диагностики объекта",
-    text: "Можно установить временные датчики и провести анализ работы холодильного оборудования.",
-    included: [
-      "временный мониторинг",
-      "анализ температурных колебаний",
-      "критические отклонения",
-      "время восстановления температуры",
-      "нестабильно работающее оборудование",
-      "зоны повышенного риска",
-      "итоговый отчёт",
-      "рекомендации",
-    ],
-    price: "от €199",
-    cta: "Заказать диагностику",
-    chartTitle: "Температура за 24 часа",
-    chartNormalZone: "Норма: +2°C — +5°C",
-    tooltip: "03:14 — +7.8°C",
-  },
-  industries: {
-    heading: "Для бизнеса, где температура имеет значение",
+  costExamples: {
+    heading: "Примеры ориентировочной стоимости",
     items: [
+      { label: "Небольшой объект", sensors: "5 сенсоров", price: "€100–€150 / месяц" },
+      { label: "Средний объект", sensors: "15 сенсоров", price: "€300–€450 / месяц" },
+      { label: "Большой объект", sensors: "25 сенсоров", price: "€500–€750 / месяц" },
+    ],
+    footnote: "* первоначальное оборудование и внедрение — €1 500, единоразово.",
+  },
+  serviceCompany: {
+    heading: "Не нужно менять вашу сервисную компанию",
+    paragraphs: [
+      "ThermoGuard работает вместе с вашей существующей сервисной инфраструктурой.",
+      "При критическом отклонении уведомление может быть автоматически отправлено вашему техническому персоналу и компании, которая уже обслуживает холодильное оборудование.",
+    ],
+    highlight: "Мы не заменяем вашего сервисного партнёра — мы помогаем ему быстрее узнать о проблеме.",
+  },
+  remoteControl: {
+    heading: "Не только мониторинг",
+    subtitle: "В зависимости от типа холодильного оборудования ThermoGuard может поддерживать удалённое изменение рабочих параметров.",
+    mockup: {
+      unit: "Freezer Unit 02",
+      currentLabel: "Текущая температура",
+      current: "-11.8°C",
+      setPointLabel: "Заданная температура",
+      setPoint: "-18°C",
+      options: ["-19°C", "-18°C", "-17°C"],
+      apply: "Применить изменение",
+    },
+    note: "Доступные функции управления зависят от модели оборудования и типа подключения. Мы не гарантируем удалённое управление для любого оборудования.",
+  },
+  calculator: {
+    heading: "Рассчитайте стоимость для вашего объекта",
+    subtitle: "Это предварительная оценка для ориентира — точный расчёт подготовит наш специалист.",
+    stepLabel: "Шаг",
+    of: "из",
+    back: "Назад",
+    next: "Далее",
+    steps: {
+      objects: {
+        question: "Сколько у вас объектов?",
+        options: ["1", "2–5", "6+"],
+      },
+      sensors: {
+        question: "Сколько холодильных установок или контролируемых точек?",
+        plus: "25+",
+        unitLabel: "сенсоров",
+      },
+      equipment: {
+        question: "Тип оборудования",
+        options: [
+          "Холодильные камеры",
+          "Морозильные камеры",
+          "Холодильные витрины",
+          "Промышленное холодильное оборудование",
+          "Смешанное оборудование",
+          "Другое",
+        ],
+      },
+      remote: {
+        question: "Требуется ли удалённое управление?",
+        options: ["Да", "Нет", "Не знаю"],
+      },
+    },
+    result: {
+      heading: "Предварительный расчёт",
+      setupLabel: "Оборудование и подключение",
+      setupPrice: "€1 500 единоразово",
+      installment: "возможна поэтапная оплата до 24 месяцев",
+      sensorsLabel: "Количество активных сенсоров",
+      monthlyLabel: "Ориентировочная ежемесячная стоимость",
+      monthlyUnit: "/ месяц",
+      monthlyNote: "Точная стоимость зависит от типа оборудования и конфигурации подключения.",
+      editCta: "Изменить параметры",
+    },
+    leadForm: {
+      heading: "Получить точный расчёт",
+      fields: {
+        name: "Имя",
+        company: "Название компании",
+        phone: "Телефон",
+        email: "Email",
+      },
+      submit: "Получить точный расчёт",
+    },
+    success: {
+      title: "Спасибо. Мы получили информацию об объекте.",
+      text: "Наш специалист свяжется с вами, чтобы уточнить техническую конфигурацию и подготовить точный расчёт.",
+    },
+  },
+  targetCustomers: {
+    heading: "Для бизнеса, где температура имеет значение",
+    primaryLabel: "Основные направления",
+    primary: [
       "Холодильные склады",
-      "Логистические компании",
+      "Пищевые производства",
+      "Мясопереработка",
+      "Рыбопереработка",
+      "Молочные предприятия",
+      "Frozen food",
       "Продуктовые дистрибьюторы",
       "Супермаркеты",
+      "Фармацевтические склады",
+      "Коммерческие холодильные объекты",
+    ],
+    secondaryLabel: "Также подходит для",
+    secondary: [
       "Рестораны",
       "Гостиницы",
-      "Кейтеринговые компании",
-      "Производители продуктов питания",
-      "Хранение замороженной продукции",
+      "Кейтеринг",
+      "Кондитерские производства",
+      "Флористические склады и логистика цветов",
     ],
   },
-  dashboardDemo: {
-    heading: "Мониторинг в реальном времени",
-    tableTitle: "Оборудование под контролем",
-    incidentTitle: "ACTIVE INCIDENT",
-    unit: "Морозильная камера 02",
-    currentTempLabel: "Текущая температура",
-    targetLabel: "Целевая температура",
-    target: "-18°C",
-    status: "CRITICAL TEMPERATURE",
-    timeline: [
-      { time: "02:17", text: "Обнаружено превышение температуры" },
-      { time: "02:18", text: "Ответственное лицо уведомлено" },
-      { time: "02:23", text: "Ответ не получен" },
-      { time: "02:24", text: "Начата эскалация" },
-      { time: "02:31", text: "Вызван сервисный инженер" },
-      { time: "03:08", text: "Инженер прибыл" },
-      { time: "03:46", text: "Температура восстанавливается" },
+  businessScenarios: {
+    heading: "Где ThermoGuard может предотвратить серьёзные потери",
+    subtitle: "Несколько типовых ситуаций, в которых раннее обнаружение температурного отклонения имеет критическое значение.",
+    tag: "ТИПОВОЙ СЦЕНАРИЙ",
+    scenarios: [
+      {
+        industry: "Холодильный склад",
+        title: "Продукция стоимостью более €150 000 могла остаться без охлаждения",
+        body: "Компания арендует холодильный склад на шесть месяцев для временного хранения продукции общей стоимостью более €150 000. Ночью на объекте происходит отключение электропитания. Персонала на складе нет, поэтому без удалённого мониторинга проблему могут обнаружить только спустя несколько часов. ThermoGuard фиксирует рост температуры после выхода показателей за установленный диапазон и автоматически уведомляет ответственных сотрудников и обслуживающую компанию.",
+        metrics: [
+          { value: "€150 000+", label: "стоимость продукции под риском" },
+          { value: "24/7", label: "автоматический контроль" },
+        ],
+        bottomLine: "Узнать о проблеме в первые минуты, а не при следующем посещении объекта.",
+      },
+      {
+        industry: "Кондитерское производство",
+        title: "Более 1 000 тортов перед выходными",
+        body: "Кондитерское производство готовит крупную партию заказов к выходным. В холодильных камерах находится более 1 000 тортов и десертов. В ночь с пятницы на субботу возникает техническая проблема холодильной системы, и температура начинает выходить за установленный диапазон. Без удалённого контроля проблема может оставаться незамеченной до утра. ThermoGuard фиксирует изменение температуры и отправляет Telegram-уведомление ответственным сотрудникам и технической компании.",
+        metrics: [
+          { value: "1 000+", label: "единиц готовой продукции" },
+          { value: "Пт → Сб", label: "критическая ночь перед доставками" },
+        ],
+        bottomLine: "Возможность отреагировать ночью, пока ещё можно сохранить продукцию и выполнить заказы клиентов.",
+      },
+      {
+        industry: "Склад цветов",
+        title: "Несколько часов неправильной температуры могут испортить поставку",
+        body: "Оптовый поставщик цветов получает крупные партии свежей продукции. Цветы хранятся в холодильных помещениях до распределения по магазинам и флористам. Ночью температура в одной из камер начинает постепенно повышаться из-за неисправности оборудования. Склад закрыт, персонала нет. ThermoGuard продолжает контролировать показатели и после превышения установленного порога автоматически отправляет уведомление ответственному сотруднику и сервисной компании.",
+        metrics: [
+          { value: "24/7", label: "контроль без присутствия персонала" },
+          { value: "Риск качества", label: "и срока реализации продукции" },
+        ],
+        bottomLine: "Обнаружить проблему до начала рабочего дня, а не после того, как качество товара уже ухудшилось.",
+      },
     ],
-    inProgress: "INCIDENT IN PROGRESS",
   },
-  benefits: {
-    heading: "Почему компании используют постоянный мониторинг",
-    cards: [
+  faq: {
+    heading: "Частые вопросы",
+    items: [
       {
-        title: "Раннее обнаружение",
-        text: "Система может обнаружить проблему раньше, чем её заметит персонал.",
+        q: "Нужно ли менять существующую сервисную компанию?",
+        a: "Нет. ThermoGuard может уведомлять вашу текущую сервисную компанию.",
       },
       {
-        title: "Более быстрая реакция",
-        text: "Автоматические уведомления уменьшают время между возникновением проблемы и началом действий.",
+        q: "Сколько сенсоров поддерживает базовый модуль?",
+        a: "До 25 сенсоров.",
       },
       {
-        title: "Полная история",
-        text: "Температурные показатели и информация об инцидентах сохраняются.",
+        q: "Можно ли подключить больше 25 сенсоров?",
+        a: "Да. Для крупных объектов конфигурация рассчитывается индивидуально.",
       },
       {
-        title: "Снижение риска",
-        text: "Быстрая реакция помогает уменьшить риск порчи продукции и финансовых потерь.",
+        q: "Можно ли оплачивать оборудование частями?",
+        a: "Да. Возможна поэтапная оплата до 24 месяцев.",
+      },
+      {
+        q: "Сколько стоит ежемесячная подписка?",
+        a: "Ориентировочно €20–€30 за активный сенсор в месяц. Точная цена зависит от оборудования и конфигурации.",
+      },
+      {
+        q: "Можно ли удалённо менять температуру?",
+        a: "Для поддерживаемого оборудования возможно удалённое изменение параметров.",
+      },
+      {
+        q: "Что происходит при аварии?",
+        a: "ThermoGuard фиксирует отклонение и отправляет уведомление ответственным сотрудникам и, если настроено, существующей сервисной компании клиента.",
+      },
+      {
+        q: "ThermoGuard сам выполняет ремонт?",
+        a: "Нет. Ремонт выполняет технический персонал клиента или его сервисный подрядчик.",
       },
     ],
   },
   finalCta: {
     label: "24/7 REFRIGERATION MONITORING",
     heading: "Сколько времени потребуется вашей компании, чтобы обнаружить поломку холодильного оборудования сегодня ночью?",
-    text: "Узнайте, как круглосуточный мониторинг может помочь защитить ваш бизнес.",
-    ctaPrimary: "Получить консультацию",
-    ctaSecondary: "Заказать демонстрацию",
-  },
-  contactForm: {
-    heading: "Получить консультацию",
-    subheading: "Расскажите немного о вашем объекте — мы подберём подходящий уровень контроля.",
-    fields: {
-      name: "Имя",
-      company: "Название компании",
-      phone: "Телефон",
-      email: "Email",
-      units: "Количество холодильных агрегатов",
-      businessType: "Тип бизнеса",
-    },
-    businessTypes: [
-      "Склад",
-      "Логистика",
-      "Ресторан",
-      "Гостиница",
-      "Супермаркет",
-      "Производство",
-      "Другое",
-    ],
-    selectPlaceholder: "Выберите вариант",
-    submit: "Получить консультацию",
-    successTitle: "Спасибо.",
-    successText: "Мы свяжемся с вами в ближайшее время.",
+    text: "Узнайте, как круглосуточный удалённый мониторинг может помочь защитить ваш бизнес.",
+    ctaPrimary: "Рассчитать стоимость",
+    ctaSecondary: "Посмотреть, как работает система",
   },
   footer: {
-    tagline: "Круглосуточный мониторинг холодильного оборудования",
+    tagline: "ThermoGuard — система мониторинга коммерческого холодильного оборудования.",
     linksHeading: "Навигация",
     links: {
       how: "Как это работает",
-      pricing: "Тарифы",
-      diagnostics: "Диагностика",
+      pricing: "Стоимость",
+      calculator: "Калькулятор",
+      faq: "Вопросы",
       privacy: "Политика конфиденциальности",
       terms: "Условия использования",
-      contacts: "Контакты",
     },
     contactsHeading: "Контакты",
-    email: "info@thermoguard.example",
-    phone: "+371 20 000 000",
-    disclaimer: "Независимый коммерческий сервис мониторинга.",
+    contactsFallback: "Свяжитесь с нами через форму расчёта стоимости на сайте.",
+    email: "",
+    phone: "",
+    disclaimer: "ThermoGuard не является аварийной ремонтной службой. Ремонт оборудования выполняется техническим персоналом клиента или его сервисной компанией.",
     rights: "Все права защищены.",
-  },
-  common: {
-    liveLabel: "LIVE",
-    onlineLabel: "ONLINE",
-    connectedLabel: "CONNECTED",
-    lastUpdate: "Обновлено 14 сек назад",
-    microcopy: {
-      sensorConnected: "Датчик температуры подключён",
-      thresholdExceeded: "Превышен порог тревоги",
-      escalationStarted: "Запущен протокол эскалации",
-    },
   },
 };
