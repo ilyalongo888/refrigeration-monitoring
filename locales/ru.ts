@@ -77,6 +77,7 @@ export interface Dictionary {
     heading: string;
     subtitle: string;
     note: string;
+    imageAlt: string;
     features: { label: string; text: string }[];
   };
   howItWorks: {
@@ -292,6 +293,7 @@ export const ru: Dictionary = {
     subtitle:
       "Центральный контроллер подключается к холодильному оборудованию, собирает данные с сенсоров и передаёт их в систему мониторинга ThermoGuard.",
     note: "Количество и тип подключаемых сенсоров зависит от конфигурации оборудования на объекте.",
+    imageAlt: "Система ThermoGuard: контроллер, сенсоры, мониторинг и Telegram-уведомления",
     features: [
       { label: "До 25 сенсоров", text: "на один модуль" },
       { label: "Мониторинг 24/7", text: "постоянный контроль параметров" },

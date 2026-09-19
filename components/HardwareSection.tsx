@@ -4,9 +4,19 @@ import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
 import { SectionHeading } from "./ui/SectionHeading";
 
+// Each locale ships its own fully-localized hardware/product graphic (labels are baked
+// into the PNG) — never overlay translated text on top of a single shared image.
+const hardwareImageByLocale = {
+  lv: "/images/thermoguard-system-lv.png",
+  ru: "/images/thermoguard-system-ru.png",
+  en: "/images/thermoguard-system-en.png",
+  et: "/images/thermoguard-system-et.png",
+};
+
 export function HardwareSection() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const hw = t.hardware;
+  const imageSrc = hardwareImageByLocale[lang] ?? hardwareImageByLocale.lv;
 
   return (
     <section className="border-t border-[rgba(148,163,184,0.08)] bg-[#0B1728] py-16 sm:py-24 lg:py-28">
@@ -23,8 +33,9 @@ export function HardwareSection() {
             style={{ aspectRatio: "1672 / 433" }}
           >
             <Image
-              src="/images/thermoguard-hardware-system-cropped.png"
-              alt={hw.heading}
+              key={imageSrc}
+              src={imageSrc}
+              alt={hw.imageAlt}
               fill
               sizes="(min-width: 1024px) 1200px, 100vw"
               className="object-contain"

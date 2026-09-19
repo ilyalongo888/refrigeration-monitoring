@@ -68,6 +68,7 @@ export const en: Dictionary = {
     subtitle:
       "The central controller connects to your refrigeration equipment, collects sensor data, and sends it to the ThermoGuard monitoring system.",
     note: "The number and type of connected sensors depends on the equipment configuration on site.",
+    imageAlt: "ThermoGuard system: controller, sensors, monitoring dashboard and Telegram notifications",
     features: [
       { label: "Up to 25 sensors", text: "per module" },
       { label: "24/7 monitoring", text: "continuous parameter tracking" },

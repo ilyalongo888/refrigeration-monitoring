@@ -68,6 +68,7 @@ export const et: Dictionary = {
     subtitle:
       "Keskkontroller ühendatakse külmutusseadmetega, kogub andmeid sensoritelt ja edastab need ThermoGuard monitooringusüsteemi.",
     note: "Ühendatavate sensorite arv ja tüüp sõltuvad objektil oleva seadme konfiguratsioonist.",
+    imageAlt: "ThermoGuard süsteem: kontroller, andurid, seirepaneel ja Telegrami teavitused",
     features: [
       { label: "Kuni 25 sensorit", text: "ühel moodulil" },
       { label: "Monitooring 24/7", text: "pidev parameetrite jälgimine" },

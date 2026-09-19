@@ -68,6 +68,7 @@ export const lv: Dictionary = {
     subtitle:
       "Centrālais kontrolieris tiek pievienots saldēšanas iekārtām, apkopo datus no sensoriem un pārsūta tos ThermoGuard monitoringa sistēmai.",
     note: "Pieslēdzamo sensoru skaits un veids atkarīgs no iekārtu konfigurācijas objektā.",
+    imageAlt: "ThermoGuard sistēma: kontrolieris, sensori, monitorings un Telegram paziņojumi",
     features: [
       { label: "Līdz 25 sensoriem", text: "uz vienu moduli" },
       { label: "Monitorings 24/7", text: "nepārtraukta parametru kontrole" },
