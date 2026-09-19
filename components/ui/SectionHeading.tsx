@@ -8,6 +8,9 @@ interface SectionHeadingProps {
   theme?: "light" | "dark";
   as?: "h1" | "h2";
   className?: string;
+  /** Optional overrides for this instance's text color, leaving `theme`'s default for every other usage untouched. */
+  headingClassName?: string;
+  subtitleClassName?: string;
 }
 
 export function SectionHeading({
@@ -18,11 +21,13 @@ export function SectionHeading({
   theme = "light",
   as = "h2",
   className = "",
+  headingClassName,
+  subtitleClassName,
 }: SectionHeadingProps) {
   const Heading = as;
   const alignClass = align === "center" ? "text-center mx-auto" : "text-left";
-  const headingColor = theme === "dark" ? "text-text-primary" : "text-[#0B1728]";
-  const subtitleColor = theme === "dark" ? "text-text-secondary" : "text-slate-500";
+  const headingColor = headingClassName ?? (theme === "dark" ? "text-text-primary" : "text-[#0B1728]");
+  const subtitleColor = subtitleClassName ?? (theme === "dark" ? "text-text-secondary" : "text-slate-500");
 
   return (
     <div className={`max-w-2xl ${alignClass} ${className}`}>

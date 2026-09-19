@@ -29,7 +29,7 @@ body {
     radial-gradient(700px 480px at 82% 12%, rgba(34, 211, 238, 0.16), transparent 60%),
     radial-gradient(560px 420px at 65% 70%, rgba(59, 130, 246, 0.14), transparent 60%),
     radial-gradient(1000px 700px at 10% -10%, rgba(34, 211, 238, 0.06), transparent 55%),
-    linear-gradient(180deg, #07111f 0%, #0b1728 100%);
+    #06111f;
 }
 
 .bg-cta-glow {

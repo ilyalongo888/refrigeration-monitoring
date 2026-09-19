@@ -12,9 +12,15 @@ export function PricingModel() {
   const ce = t.costExamples;
 
   return (
-    <section id="pricing" className="scroll-mt-20 bg-bg-light py-16 sm:py-24 lg:py-28">
+    <section id="pricing" className="scroll-mt-20 bg-[#F7F9FC] py-16 sm:py-24 lg:py-28">
       <div className="container">
-        <SectionHeading heading={p.heading} subtitle={p.subtitle} theme="light" />
+        <SectionHeading
+          heading={p.heading}
+          subtitle={p.subtitle}
+          theme="light"
+          headingClassName="text-[#0F172A]"
+          subtitleClassName="text-[#64748B]"
+        />
 
         <div className="mt-14 flex flex-col items-stretch gap-4 lg:flex-row lg:items-center">
           {/* Equipment & setup */}
@@ -23,23 +29,23 @@ export function PricingModel() {
               {p.equipment.label}
             </p>
             <div className="mt-4 flex items-baseline gap-2">
-              <span className="text-4xl font-semibold tracking-tight text-[#0B1728]">
+              <span className="text-4xl font-semibold tracking-tight text-[#0F172A]">
                 {p.equipment.price}
               </span>
-              <span className="text-sm text-slate-400">{p.equipment.period}</span>
+              <span className="text-sm text-[#64748B]">{p.equipment.period}</span>
             </div>
 
             <ul className="mt-6 space-y-3 text-sm">
               {p.equipment.included.map((item, i) => (
                 <li key={i} className="flex items-start gap-2.5">
                   <Check className="mt-0.5 h-4 w-4 shrink-0 text-accent-blue" strokeWidth={2.25} />
-                  <span className="text-slate-600">{item}</span>
+                  <span className="text-[#0F172A]">{item}</span>
                 </li>
               ))}
             </ul>
 
             <div className="my-6 h-px w-full bg-slate-200" />
-            <p className="text-sm text-slate-500">{p.equipment.installment}</p>
+            <p className="text-sm text-[#64748B]">{p.equipment.installment}</p>
           </div>
 
           <span className="mx-auto flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-400 lg:mx-0">
@@ -74,7 +80,7 @@ export function PricingModel() {
 
         {/* Illustrative cost examples */}
         <div className="mt-14">
-          <p className="text-center text-xs font-semibold uppercase tracking-[0.14em] text-slate-400">
+          <p className="text-center text-xs font-semibold uppercase tracking-[0.14em] text-[#64748B]">
             {ce.heading}
           </p>
           <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -83,13 +89,13 @@ export function PricingModel() {
                 key={i}
                 className="rounded-panel border border-slate-200/80 bg-white px-5 py-5 text-center"
               >
-                <p className="text-sm font-medium text-[#0B1728]">{item.label}</p>
-                <p className="mt-1 text-xs text-slate-400">{item.sensors}</p>
+                <p className="text-sm font-medium text-[#0F172A]">{item.label}</p>
+                <p className="mt-1 text-xs text-[#64748B]">{item.sensors}</p>
                 <p className="mt-3 text-lg font-semibold text-accent-blue">{item.price}</p>
               </div>
             ))}
           </div>
-          <p className="mt-4 text-center text-xs text-slate-400">{ce.footnote}</p>
+          <p className="mt-4 text-center text-xs text-[#64748B]">{ce.footnote}</p>
         </div>
 
         <div className="mt-12 flex justify-center">

@@ -11,7 +11,10 @@ export function HowItWorks() {
   const steps = t.howItWorks.steps;
 
   return (
-    <section id="how-it-works" className="scroll-mt-20 bg-[#081321] py-16 sm:py-24 lg:py-28">
+    <section
+      id="how-it-works"
+      className="scroll-mt-20 border-t border-[rgba(148,163,184,0.07)] bg-[#07111F] py-16 sm:py-24 lg:py-28"
+    >
       <div className="container">
         <SectionHeading
           heading={t.howItWorks.heading}
@@ -29,7 +32,7 @@ export function HowItWorks() {
               return (
                 <div key={i} className="flex flex-col items-center text-center">
                   <div
-                    className={`relative z-10 flex h-12 w-12 items-center justify-center rounded-full border bg-[#081321] ${
+                    className={`relative z-10 flex h-12 w-12 items-center justify-center rounded-full border bg-[#07111F] ${
                       isLast
                         ? "border-accent-cyan shadow-glow-sm"
                         : "border-line"
@@ -66,7 +69,7 @@ export function HowItWorks() {
                   <span className="absolute left-[23px] top-12 h-full w-px bg-line" aria-hidden />
                 )}
                 <div
-                  className={`relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border bg-[#081321] ${
+                  className={`relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border bg-[#07111F] ${
                     isLast ? "border-accent-cyan shadow-glow-sm" : "border-line"
                   }`}
                 >
