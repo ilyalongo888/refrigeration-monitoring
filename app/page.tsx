@@ -19,11 +19,11 @@ export default function Home() {
       <main className="overflow-x-hidden">
         <Hero />
         <HardwareSection />
-        <HowItWorks />
         <PricingModel />
         <ServiceCompany />
-        <RemoteControl />
+        <HowItWorks />
         <Calculator />
+        <RemoteControl />
         <TargetCustomers />
         <BusinessScenarios />
         <FAQ />

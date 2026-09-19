@@ -14,7 +14,7 @@ export function BusinessScenarios() {
   const bs = t.businessScenarios;
 
   return (
-    <section className="bg-[#0B1728] py-16 sm:py-24 lg:py-28">
+    <section className="bg-[#07111F] py-16 sm:py-24 lg:py-28">
       <div className="container">
         <SectionHeading heading={bs.heading} subtitle={bs.subtitle} theme="dark" className="max-w-2xl" />
 

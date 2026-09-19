@@ -35,7 +35,7 @@ body {
 .bg-cta-glow {
   background:
     radial-gradient(600px 400px at 50% 0%, rgba(34, 211, 238, 0.14), transparent 60%),
-    #07111f;
+    #050c16;
 }
 
 /* thin custom scrollbar for demo tables on small screens */

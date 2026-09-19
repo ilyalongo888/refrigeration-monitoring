@@ -33,7 +33,7 @@ export function TargetCustomers() {
   const tc = t.targetCustomers;
 
   return (
-    <section className="bg-white py-16 sm:py-24 lg:py-28">
+    <section className="bg-bg-light py-16 sm:py-24 lg:py-28">
       <div className="container">
         <SectionHeading heading={tc.heading} theme="light" />
 

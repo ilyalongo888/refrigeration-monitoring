@@ -14,7 +14,7 @@ export function RemoteControl() {
   const [applied, setApplied] = useState(false);
 
   return (
-    <section className="bg-[#07111F] py-16 sm:py-24 lg:py-28">
+    <section className="bg-[#0B1728] py-16 sm:py-24 lg:py-28">
       <div className="container grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
         <div>
           <SectionHeading

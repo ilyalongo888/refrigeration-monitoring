@@ -86,9 +86,9 @@ export function Calculator() {
   };
 
   return (
-    <section id="calculator" className="scroll-mt-20 bg-[#0B1728] py-16 sm:py-24 lg:py-28">
+    <section id="calculator" className="scroll-mt-20 bg-bg-light py-16 sm:py-24 lg:py-28">
       <div className="container">
-        <SectionHeading heading={c.heading} subtitle={c.subtitle} theme="dark" />
+        <SectionHeading heading={c.heading} subtitle={c.subtitle} theme="light" />
 
         <div className="mx-auto mt-12 max-w-2xl">
           {phase === "steps" && (

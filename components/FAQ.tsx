@@ -11,7 +11,7 @@ export function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="scroll-mt-20 bg-white py-16 sm:py-24 lg:py-28">
+    <section id="faq" className="scroll-mt-20 bg-bg-light py-16 sm:py-24 lg:py-28">
       <div className="container">
         <SectionHeading heading={faq.heading} theme="light" />
 
