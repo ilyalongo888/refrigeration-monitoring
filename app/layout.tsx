@@ -16,30 +16,42 @@ const mono = JetBrains_Mono({
   weight: ["400", "500", "600"],
 });
 
-const siteUrl = "https://thermoguard.example";
+// TODO: replace with the production domain once one is assigned (currently the Vercel preview URL).
+const siteUrl = "https://refrigeration-monitoring.vercel.app";
 
+// Latvia is the primary market, so metadata defaults to Latvian; the site itself
+// still offers LV / RU / EN / ET via the in-page language switcher (see LanguageContext).
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "24/7 мониторинг и удалённое управление холодильным оборудованием | ThermoGuard",
+  title: "Saldēšanas iekārtu monitorings 24/7 | ThermoGuard",
   description:
-    "Круглосуточный мониторинг температуры холодильного оборудования и мгновенные уведомления об отклонениях. Дополняет вашу сервисную компанию — не заменяет её.",
+    "Diennakts saldēšanas iekārtu temperatūras monitorings un tūlītēji paziņojumi par novirzēm. Papildina jūsu servisa uzņēmumu — neaizstāj to.",
   keywords: [
-    "мониторинг холодильного оборудования",
-    "контроль температуры",
-    "мониторинг температуры 24/7",
-    "холодильные камеры",
-    "морозильные камеры",
-    "удалённое управление температурой",
-    "уведомления об отклонении температуры",
+    "saldēšanas iekārtu monitorings",
+    "temperatūras kontrole",
+    "monitorings 24/7",
+    "saldēšanas kameras",
+    "saldētavas",
+    "attālā iekārtu vadība",
+    "temperatūras novirzes paziņojumi",
   ],
   openGraph: {
-    title: "24/7 мониторинг и удалённое управление холодильным оборудованием | ThermoGuard",
+    title: "Saldēšanas iekārtu monitorings 24/7 | ThermoGuard",
     description:
-      "Обнаружить отклонение раньше. Уведомить ответственных мгновенно. Круглосуточный мониторинг температуры и удалённая настройка параметров — без замены вашей сервисной компании.",
+      "Atklājiet novirzi agrāk. Informējiet atbildīgos uzreiz. Diennakts temperatūras monitorings un attālā parametru vadība — bez jūsu servisa uzņēmuma aizstāšanas.",
     url: siteUrl,
     siteName: "ThermoGuard",
-    locale: "ru_RU",
+    locale: "lv_LV",
+    alternateLocale: ["ru_RU", "en_US", "et_EE"],
     type: "website",
+  },
+  alternates: {
+    languages: {
+      lv: siteUrl,
+      ru: siteUrl,
+      en: siteUrl,
+      et: siteUrl,
+    },
   },
   robots: {
     index: true,
@@ -53,7 +65,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ru" className={`${inter.variable} ${mono.variable}`}>
+    <html lang="lv" className={`${inter.variable} ${mono.variable}`}>
       <body className="font-sans antialiased">
         <LanguageProvider>{children}</LanguageProvider>
       </body>

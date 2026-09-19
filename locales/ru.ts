@@ -143,6 +143,7 @@ export interface Dictionary {
       monthlyLabel: string;
       monthlyUnit: string;
       monthlyNote: string;
+      fromPrefix: string;
       editCta: string;
     };
     leadForm: {
@@ -196,9 +197,21 @@ export interface Dictionary {
       terms: string;
     };
     contactsHeading: string;
-    contactsFallback: string;
+    address: string;
+    phones: string[];
     email: string;
-    phone: string;
+    hoursLabel: string;
+    hours: string;
+    companyHeading: string;
+    companyName: string;
+    vatLabel: string;
+    vatNumber: string;
+    bankHeading: string;
+    ibanLabel: string;
+    iban: string;
+    bankName: string;
+    swiftLabel: string;
+    swift: string;
     disclaimer: string;
     rights: string;
   };
@@ -217,15 +230,15 @@ export const ru: Dictionary = {
   },
   hero: {
     badge: "МОНИТОРИНГ 24/7",
-    h1: "Узнайте о проблеме {{раньше}}, чем она станет {{убытком}}",
+    h1: "Узнайте о проблеме {{раньше}}, чем она станет {{проблемой}}",
     subtitle:
       "ThermoGuard круглосуточно контролирует холодильное оборудование, фиксирует температурные отклонения и автоматически уведомляет вашу команду и обслуживающую компанию о проблеме.",
     ctaPrimary: "Рассчитать стоимость",
     ctaSecondary: "Посмотреть, как работает система",
     microcopy: [
       "До 25 сенсоров на одном модуле",
+      "€20 за сенсор / месяц",
       "Telegram-уведомления",
-      "Удалённый доступ",
       "Мониторинг 24/7",
     ],
   },
@@ -322,28 +335,29 @@ export const ru: Dictionary = {
     },
     monitoring: {
       label: "ЕЖЕМЕСЯЧНАЯ ЛИЦЕНЗИЯ МОНИТОРИНГА",
-      price: "€20–€30",
+      price: "€20",
       period: "за активный сенсор / месяц",
       included: [
         "мониторинг 24/7",
         "история показаний",
-        "автоматические alerts",
+        "автоматические уведомления",
         "удалённый доступ к параметрам",
-        "dashboard",
+        "панель мониторинга",
         "Telegram-уведомления",
         "передачу информации сервисной компании",
         "удалённое управление для поддерживаемого оборудования",
       ],
-      note: "Стоимость лицензии зависит от типа оборудования, конфигурации подключения и объёма контролируемых параметров.",
+      note: "Тарифицируется по числу активных сенсоров. Итоговая сумма = количество сенсоров × €20.",
     },
     cta: "Рассчитать стоимость",
   },
   costExamples: {
     heading: "Примеры ориентировочной стоимости",
     items: [
-      { label: "Небольшой объект", sensors: "5 сенсоров", price: "€100–€150 / месяц" },
-      { label: "Средний объект", sensors: "15 сенсоров", price: "€300–€450 / месяц" },
-      { label: "Большой объект", sensors: "25 сенсоров", price: "€500–€750 / месяц" },
+      { label: "Небольшой объект", sensors: "5 сенсоров", price: "€100 / месяц" },
+      { label: "Средний объект", sensors: "10 сенсоров", price: "€200 / месяц" },
+      { label: "Объект побольше", sensors: "15 сенсоров", price: "€300 / месяц" },
+      { label: "Большой объект", sensors: "25 сенсоров", price: "€500 / месяц" },
     ],
     footnote: "* первоначальное оборудование и внедрение — €1 500, единоразово.",
   },
@@ -359,7 +373,7 @@ export const ru: Dictionary = {
     heading: "Не только мониторинг",
     subtitle: "В зависимости от типа холодильного оборудования ThermoGuard может поддерживать удалённое изменение рабочих параметров.",
     mockup: {
-      unit: "Freezer Unit 02",
+      unit: "Морозильная камера 02",
       currentLabel: "Текущая температура",
       current: "-11.8°C",
       setPointLabel: "Заданная температура",
@@ -410,7 +424,8 @@ export const ru: Dictionary = {
       sensorsLabel: "Количество активных сенсоров",
       monthlyLabel: "Ориентировочная ежемесячная стоимость",
       monthlyUnit: "/ месяц",
-      monthlyNote: "Точная стоимость зависит от типа оборудования и конфигурации подключения.",
+      monthlyNote: "Точная техническая конфигурация подтверждается после проверки совместимости оборудования.",
+      fromPrefix: "от",
       editCta: "Изменить параметры",
     },
     leadForm: {
@@ -437,7 +452,7 @@ export const ru: Dictionary = {
       "Мясопереработка",
       "Рыбопереработка",
       "Молочные предприятия",
-      "Frozen food",
+      "Производители и дистрибьюторы замороженной продукции",
       "Продуктовые дистрибьюторы",
       "Супермаркеты",
       "Фармацевтические склады",
@@ -510,7 +525,7 @@ export const ru: Dictionary = {
       },
       {
         q: "Сколько стоит ежемесячная подписка?",
-        a: "Ориентировочно €20–€30 за активный сенсор в месяц. Точная цена зависит от оборудования и конфигурации.",
+        a: "€20 за активный сенсор в месяц.",
       },
       {
         q: "Можно ли удалённо менять температуру?",
@@ -545,9 +560,21 @@ export const ru: Dictionary = {
       terms: "Условия использования",
     },
     contactsHeading: "Контакты",
-    contactsFallback: "Свяжитесь с нами через форму расчёта стоимости на сайте.",
-    email: "",
-    phone: "",
+    address: "Vienības gatve 136a, Rīga, LV-1058",
+    phones: ["+371 29750250", "+371 20391190"],
+    email: "hmsec@inbox.lv",
+    hoursLabel: "Режим работы:",
+    hours: "9:00–19:00",
+    companyHeading: "Компания",
+    companyName: "HMS-EC SIA",
+    vatLabel: "Рег. номер:",
+    vatNumber: "LV 40203185028",
+    bankHeading: "Банковские реквизиты",
+    ibanLabel: "IBAN:",
+    iban: "LT523500010009805409",
+    bankName: "PAYSERA UAB",
+    swiftLabel: "SWIFT:",
+    swift: "EVIULT2VXXX",
     disclaimer: "ThermoGuard не является аварийной ремонтной службой. Ремонт оборудования выполняется техническим персоналом клиента или его сервисной компанией.",
     rights: "Все права защищены.",
   },

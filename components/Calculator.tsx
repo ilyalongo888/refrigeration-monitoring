@@ -12,8 +12,7 @@ type Phase = "steps" | "result" | "success";
 const TOTAL_STEPS = 4;
 const SENSOR_MIN = 1;
 const SENSOR_MAX = 25;
-const RATE_LOW = 20;
-const RATE_HIGH = 30;
+const RATE = 20;
 
 export function Calculator() {
   const { t } = useLanguage();
@@ -69,11 +68,10 @@ export function Calculator() {
   };
 
   const effectiveSensors = sensorsPlus ? SENSOR_MAX : sensors;
-  const low = effectiveSensors * RATE_LOW;
-  const high = effectiveSensors * RATE_HIGH;
+  const monthly = effectiveSensors * RATE;
   const monthlyDisplay = sensorsPlus
-    ? `от €${low} ${c.result.monthlyUnit}`
-    : `€${low}–€${high} ${c.result.monthlyUnit}`;
+    ? `${c.result.fromPrefix} €${monthly} ${c.result.monthlyUnit}`
+    : `€${monthly} ${c.result.monthlyUnit}`;
 
   const handleLeadSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -82,8 +80,7 @@ export function Calculator() {
       sensors: sensorsPlus ? `${SENSOR_MAX}+` : sensors,
       equipment,
       remote,
-      estimateLow: low,
-      estimateHigh: sensorsPlus ? null : high,
+      estimateMonthly: monthly,
     });
     setPhase("success");
   };
