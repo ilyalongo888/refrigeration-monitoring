@@ -1,5 +1,6 @@
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
+import { HardwareSection } from "@/components/HardwareSection";
 import { HowItWorks } from "@/components/HowItWorks";
 import { PricingModel } from "@/components/PricingModel";
 import { ServiceCompany } from "@/components/ServiceCompany";
@@ -17,6 +18,7 @@ export default function Home() {
       <Header />
       <main className="overflow-x-hidden">
         <Hero />
+        <HardwareSection />
         <HowItWorks />
         <PricingModel />
         <ServiceCompany />

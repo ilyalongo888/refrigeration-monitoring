@@ -63,6 +63,18 @@ export const en: Dictionary = {
     },
     lastCheck: "Last system check: 14 seconds ago",
   },
+  hardware: {
+    heading: "What gets installed on site",
+    subtitle:
+      "The central controller connects to your refrigeration equipment, collects sensor data, and sends it to the ThermoGuard monitoring system.",
+    note: "The number and type of connected sensors depends on the equipment configuration on site.",
+    features: [
+      { label: "Up to 25 sensors", text: "per module" },
+      { label: "24/7 monitoring", text: "continuous parameter tracking" },
+      { label: "Remote access", text: "from computer and smartphone" },
+      { label: "Telegram notifications", text: "on critical deviations" },
+    ],
+  },
   howItWorks: {
     heading: "How ThermoGuard Works",
     subtitle: "From a sensor on your equipment to a notification for whoever needs to respond.",
@@ -344,7 +356,8 @@ export const en: Dictionary = {
       terms: "Terms of Use",
     },
     contactsHeading: "Contact",
-    address: "Vienības gatve 136a, Rīga, LV-1058",
+    addressLines: ["Vienības gatve 136a", "Rīga, LV-1058"],
+    openInMaps: "Open in Maps",
     phones: ["+371 29750250", "+371 20391190"],
     email: "hmsec@inbox.lv",
     hoursLabel: "Business hours:",

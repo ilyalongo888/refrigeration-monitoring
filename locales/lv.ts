@@ -63,6 +63,18 @@ export const lv: Dictionary = {
     },
     lastCheck: "Pēdējā sistēmas pārbaude: pirms 14 sekundēm",
   },
+  hardware: {
+    heading: "Kas tiek uzstādīts objektā",
+    subtitle:
+      "Centrālais kontrolieris tiek pievienots saldēšanas iekārtām, apkopo datus no sensoriem un pārsūta tos ThermoGuard monitoringa sistēmai.",
+    note: "Pieslēdzamo sensoru skaits un veids atkarīgs no iekārtu konfigurācijas objektā.",
+    features: [
+      { label: "Līdz 25 sensoriem", text: "uz vienu moduli" },
+      { label: "Monitorings 24/7", text: "nepārtraukta parametru kontrole" },
+      { label: "Attālā piekļuve", text: "no datora un viedtālruņa" },
+      { label: "Telegram paziņojumi", text: "kritisku novirzes gadījumos" },
+    ],
+  },
   howItWorks: {
     heading: "Kā strādā ThermoGuard",
     subtitle: "No sensora uz iekārtas līdz paziņojumam tiem, kam jāreaģē.",
@@ -343,7 +355,8 @@ export const lv: Dictionary = {
       terms: "Lietošanas noteikumi",
     },
     contactsHeading: "Kontakti",
-    address: "Vienības gatve 136a, Rīga, LV-1058",
+    addressLines: ["Vienības gatve 136a", "Rīga, LV-1058"],
+    openInMaps: "Atvērt kartē",
     phones: ["+371 29750250", "+371 20391190"],
     email: "hmsec@inbox.lv",
     hoursLabel: "Darba laiks:",

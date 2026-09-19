@@ -1,7 +1,11 @@
 "use client";
 
-import { Snowflake, Mail, Phone, MapPin, Clock } from "lucide-react";
+import { Snowflake, Mail, Phone, MapPin, Clock, ArrowUpRight } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
+
+// Fixed address (not localized) — kept as a single source so the maps query always matches what's displayed.
+const MAPS_URL =
+  "https://www.google.com/maps/search/?api=1&query=Vien%C4%ABbas+gatve+136a%2C+R%C4%ABga%2C+LV-1058";
 
 export function Footer() {
   const { t } = useLanguage();
@@ -58,7 +62,22 @@ export function Footer() {
             <ul className="mt-4 space-y-3 text-sm text-text-secondary">
               <li className="flex items-start gap-2">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-accent-cyan" strokeWidth={1.8} />
-                <span>{f.address}</span>
+                <span>
+                  {f.addressLines.map((line, i) => (
+                    <span key={i} className="block">
+                      {line}
+                    </span>
+                  ))}
+                  <a
+                    href={MAPS_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-1.5 inline-flex items-center gap-1 text-accent-cyan hover:text-accent-cyan/80"
+                  >
+                    {f.openInMaps}
+                    <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={2} />
+                  </a>
+                </span>
               </li>
               {f.phones.map((phone, i) => (
                 <li key={i} className="flex items-center gap-2">

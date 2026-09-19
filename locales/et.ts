@@ -63,6 +63,18 @@ export const et: Dictionary = {
     },
     lastCheck: "Viimane süsteemi kontroll: 14 sekundit tagasi",
   },
+  hardware: {
+    heading: "Mis paigaldatakse objektile",
+    subtitle:
+      "Keskkontroller ühendatakse külmutusseadmetega, kogub andmeid sensoritelt ja edastab need ThermoGuard monitooringusüsteemi.",
+    note: "Ühendatavate sensorite arv ja tüüp sõltuvad objektil oleva seadme konfiguratsioonist.",
+    features: [
+      { label: "Kuni 25 sensorit", text: "ühel moodulil" },
+      { label: "Monitooring 24/7", text: "pidev parameetrite jälgimine" },
+      { label: "Kaugjuurdepääs", text: "arvutist ja nutitelefonist" },
+      { label: "Telegrami teavitused", text: "kriitiliste kõrvalekallete korral" },
+    ],
+  },
   howItWorks: {
     heading: "Kuidas ThermoGuard töötab",
     subtitle: "Seadmel olevast sensorist teavituseni neile, kes peavad reageerima.",
@@ -344,7 +356,8 @@ export const et: Dictionary = {
       terms: "Kasutustingimused",
     },
     contactsHeading: "Kontakt",
-    address: "Vienības gatve 136a, Rīga, LV-1058",
+    addressLines: ["Vienības gatve 136a", "Rīga, LV-1058"],
+    openInMaps: "Ava kaardil",
     phones: ["+371 29750250", "+371 20391190"],
     email: "hmsec@inbox.lv",
     hoursLabel: "Tööaeg:",

@@ -73,6 +73,12 @@ export interface Dictionary {
     };
     lastCheck: string;
   };
+  hardware: {
+    heading: string;
+    subtitle: string;
+    note: string;
+    features: { label: string; text: string }[];
+  };
   howItWorks: {
     heading: string;
     subtitle: string;
@@ -197,7 +203,8 @@ export interface Dictionary {
       terms: string;
     };
     contactsHeading: string;
-    address: string;
+    addressLines: string[];
+    openInMaps: string;
     phones: string[];
     email: string;
     hoursLabel: string;
@@ -279,6 +286,18 @@ export const ru: Dictionary = {
       ],
     },
     lastCheck: "Последняя проверка системы: 14 секунд назад",
+  },
+  hardware: {
+    heading: "Что устанавливается на объекте",
+    subtitle:
+      "Центральный контроллер подключается к холодильному оборудованию, собирает данные с сенсоров и передаёт их в систему мониторинга ThermoGuard.",
+    note: "Количество и тип подключаемых сенсоров зависит от конфигурации оборудования на объекте.",
+    features: [
+      { label: "До 25 сенсоров", text: "на один модуль" },
+      { label: "Мониторинг 24/7", text: "постоянный контроль параметров" },
+      { label: "Удалённый доступ", text: "с компьютера и смартфона" },
+      { label: "Telegram-уведомления", text: "при критических отклонениях" },
+    ],
   },
   howItWorks: {
     heading: "Как работает ThermoGuard",
@@ -560,7 +579,8 @@ export const ru: Dictionary = {
       terms: "Условия использования",
     },
     contactsHeading: "Контакты",
-    address: "Vienības gatve 136a, Rīga, LV-1058",
+    addressLines: ["Vienības gatve 136a", "Rīga, LV-1058"],
+    openInMaps: "Открыть на карте",
     phones: ["+371 29750250", "+371 20391190"],
     email: "hmsec@inbox.lv",
     hoursLabel: "Режим работы:",
