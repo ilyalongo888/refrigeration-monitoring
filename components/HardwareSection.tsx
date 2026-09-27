@@ -30,7 +30,7 @@ export function HardwareSection() {
           />
           <div
             className="relative w-full overflow-hidden rounded-panel border border-line bg-black/20"
-            style={{ aspectRatio: "1672 / 433" }}
+            style={{ aspectRatio: "1659 / 948" }}
           >
             <Image
               key={imageSrc}
