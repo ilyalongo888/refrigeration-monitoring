@@ -2,7 +2,7 @@ import type { Dictionary } from "./ru";
 
 export const lv: Dictionary = {
   meta: {
-    brand: "ThermoGuard",
+    brand: "Temvio",
   },
   nav: {
     how: "Kā tas strādā",
@@ -15,7 +15,7 @@ export const lv: Dictionary = {
     badge: "MONITORINGS 24/7",
     h1: "Uzziniet par problēmu {{agrāk}}, pirms tā kļūst par lielāku {{problēmu}}",
     subtitle:
-      "ThermoGuard visu diennakti kontrolē saldēšanas iekārtas, fiksē temperatūras novirzes un automātiski informē jūsu komandu un apkalpojošo uzņēmumu par problēmu.",
+      "Temvio visu diennakti kontrolē saldēšanas iekārtas, fiksē temperatūras novirzes un automātiski informē jūsu komandu un apkalpojošo uzņēmumu par problēmu.",
     ctaPrimary: "Aprēķināt cenu",
     ctaSecondary: "Skatīt, kā strādā sistēma",
     microcopy: [
@@ -26,7 +26,7 @@ export const lv: Dictionary = {
     ],
   },
   dashboard: {
-    title: "THERMOGUARD MONITORING",
+    title: "TEMVIO MONITORING",
     online: "SYSTEM ONLINE",
     metrics: {
       sensors: "AKTĪVI SENSORI",
@@ -66,9 +66,9 @@ export const lv: Dictionary = {
   hardware: {
     heading: "Kas tiek uzstādīts objektā",
     subtitle:
-      "Centrālais kontrolieris tiek pievienots saldēšanas iekārtām, apkopo datus no sensoriem un pārsūta tos ThermoGuard monitoringa sistēmai.",
+      "Centrālais kontrolieris tiek pievienots saldēšanas iekārtām, apkopo datus no sensoriem un pārsūta tos Temvio monitoringa sistēmai.",
     note: "Pieslēdzamo sensoru skaits un veids atkarīgs no iekārtu konfigurācijas objektā.",
-    imageAlt: "ThermoGuard sistēma: kontrolieris, sensori, monitorings un Telegram paziņojumi",
+    imageAlt: "Temvio sistēma: kontrolieris, sensori, monitorings un Telegram paziņojumi",
     features: [
       { label: "Līdz 25 sensoriem", text: "uz vienu moduli" },
       { label: "Monitorings 24/7", text: "nepārtraukta parametru kontrole" },
@@ -77,7 +77,7 @@ export const lv: Dictionary = {
     ],
   },
   howItWorks: {
-    heading: "Kā strādā ThermoGuard",
+    heading: "Kā strādā Temvio",
     subtitle: "No sensora uz iekārtas līdz paziņojumam tiem, kam jāreaģē.",
     steps: [
       {
@@ -93,7 +93,7 @@ export const lv: Dictionary = {
       {
         number: "03",
         title: "ATKLĀŠANA",
-        text: "ThermoGuard automātiski fiksē rādījumu novirzi ārpus pieļaujamajām vērtībām.",
+        text: "Temvio automātiski fiksē rādījumu novirzi ārpus pieļaujamajām vērtībām.",
       },
       {
         number: "04",
@@ -160,14 +160,14 @@ export const lv: Dictionary = {
   serviceCompany: {
     heading: "Nav jāmaina jūsu servisa uzņēmums",
     paragraphs: [
-      "ThermoGuard strādā kopā ar jūsu esošo servisa infrastruktūru.",
+      "Temvio strādā kopā ar jūsu esošo servisa infrastruktūru.",
       "Kritiskas novirzes gadījumā paziņojums var tikt automātiski nosūtīts jūsu tehniskajam personālam un uzņēmumam, kas jau apkalpo saldēšanas iekārtas.",
     ],
     highlight: "Mēs neaizstājam jūsu servisa partneri — mēs palīdzam viņam ātrāk uzzināt par problēmu.",
   },
   remoteControl: {
     heading: "Ne tikai monitorings",
-    subtitle: "Atkarībā no saldēšanas iekārtas veida ThermoGuard var atbalstīt darba parametru attālinātu maiņu.",
+    subtitle: "Atkarībā no saldēšanas iekārtas veida Temvio var atbalstīt darba parametru attālinātu maiņu.",
     mockup: {
       unit: "Saldētava 02",
       currentLabel: "Pašreizējā temperatūra",
@@ -264,14 +264,14 @@ export const lv: Dictionary = {
     ],
   },
   businessScenarios: {
-    heading: "Kur ThermoGuard var novērst nopietnus zaudējumus",
+    heading: "Kur Temvio var novērst nopietnus zaudējumus",
     subtitle: "Vairākas tipiskas situācijas, kurās agrīnai temperatūras novirzes atklāšanai ir izšķiroša nozīme.",
     tag: "TIPISKS SCENĀRIJS",
     scenarios: [
       {
         industry: "Saldēšanas noliktava",
         title: "Produkcija vairāk nekā €150 000 vērtībā varēja palikt bez dzesēšanas",
-        body: "Uzņēmums uz sešiem mēnešiem īrē saldēšanas noliktavu produkcijas pagaidu uzglabāšanai, kuras kopējā vērtība pārsniedz €150 000. Naktī objektā pazūd elektrība. Personāla noliktavā nav, tāpēc bez attālā monitoringa problēmu var pamanīt tikai pēc vairākām stundām. ThermoGuard fiksē temperatūras pieaugumu pēc pieļaujamā diapazona pārsniegšanas un automātiski informē atbildīgos darbiniekus un apkalpojošo uzņēmumu.",
+        body: "Uzņēmums uz sešiem mēnešiem īrē saldēšanas noliktavu produkcijas pagaidu uzglabāšanai, kuras kopējā vērtība pārsniedz €150 000. Naktī objektā pazūd elektrība. Personāla noliktavā nav, tāpēc bez attālā monitoringa problēmu var pamanīt tikai pēc vairākām stundām. Temvio fiksē temperatūras pieaugumu pēc pieļaujamā diapazona pārsniegšanas un automātiski informē atbildīgos darbiniekus un apkalpojošo uzņēmumu.",
         metrics: [
           { value: "€150 000+", label: "riskam pakļautās produkcijas vērtība" },
           { value: "24/7", label: "automātiska kontrole" },
@@ -281,7 +281,7 @@ export const lv: Dictionary = {
       {
         industry: "Konditorejas ražotne",
         title: "Vairāk nekā 1 000 kūku pirms nedēļas nogales",
-        body: "Konditorejas ražotne gatavo lielu pasūtījumu partiju nedēļas nogalei. Saldēšanas kamerās atrodas vairāk nekā 1 000 kūku un desertu. Naktī no piektdienas uz sestdienu rodas saldēšanas sistēmas tehniska problēma, un temperatūra sāk pārsniegt noteikto diapazonu. Bez attālās kontroles problēma var palikt nepamanīta līdz rītam. ThermoGuard fiksē temperatūras izmaiņas un nosūta Telegram paziņojumu atbildīgajiem darbiniekiem un tehniskajam uzņēmumam.",
+        body: "Konditorejas ražotne gatavo lielu pasūtījumu partiju nedēļas nogalei. Saldēšanas kamerās atrodas vairāk nekā 1 000 kūku un desertu. Naktī no piektdienas uz sestdienu rodas saldēšanas sistēmas tehniska problēma, un temperatūra sāk pārsniegt noteikto diapazonu. Bez attālās kontroles problēma var palikt nepamanīta līdz rītam. Temvio fiksē temperatūras izmaiņas un nosūta Telegram paziņojumu atbildīgajiem darbiniekiem un tehniskajam uzņēmumam.",
         metrics: [
           { value: "1 000+", label: "gatavās produkcijas vienību" },
           { value: "Pk → Se", label: "kritiskā nakts pirms piegādēm" },
@@ -291,7 +291,7 @@ export const lv: Dictionary = {
       {
         industry: "Ziedu noliktava",
         title: "Dažas stundas nepareizā temperatūrā var sabojāt piegādi",
-        body: "Ziedu vairumtirgotājs saņem lielas svaigas produkcijas partijas. Ziedi tiek uzglabāti saldēšanas telpās līdz sadalei veikaliem un floristiem. Naktī vienā no kamerām temperatūra pakāpeniski paaugstinās iekārtas bojājuma dēļ. Noliktava ir slēgta, personāla nav. ThermoGuard turpina kontrolēt rādījumus un pēc noteiktā sliekšņa pārsniegšanas automātiski nosūta paziņojumu atbildīgajam darbiniekam un servisa uzņēmumam.",
+        body: "Ziedu vairumtirgotājs saņem lielas svaigas produkcijas partijas. Ziedi tiek uzglabāti saldēšanas telpās līdz sadalei veikaliem un floristiem. Naktī vienā no kamerām temperatūra pakāpeniski paaugstinās iekārtas bojājuma dēļ. Noliktava ir slēgta, personāla nav. Temvio turpina kontrolēt rādījumus un pēc noteiktā sliekšņa pārsniegšanas automātiski nosūta paziņojumu atbildīgajam darbiniekam un servisa uzņēmumam.",
         metrics: [
           { value: "24/7", label: "kontrole bez personāla klātbūtnes" },
           { value: "Kvalitātes risks", label: "un produkcijas realizācijas termiņš" },
@@ -305,7 +305,7 @@ export const lv: Dictionary = {
     items: [
       {
         q: "Vai jāmaina esošais servisa uzņēmums?",
-        a: "Nē. ThermoGuard var informēt jūsu pašreizējo servisa uzņēmumu.",
+        a: "Nē. Temvio var informēt jūsu pašreizējo servisa uzņēmumu.",
       },
       {
         q: "Cik sensoru atbalsta bāzes modulis?",
@@ -329,10 +329,10 @@ export const lv: Dictionary = {
       },
       {
         q: "Kas notiek avārijas gadījumā?",
-        a: "ThermoGuard fiksē novirzi un nosūta paziņojumu atbildīgajiem darbiniekiem un, ja iestatīts, klienta esošajam servisa uzņēmumam.",
+        a: "Temvio fiksē novirzi un nosūta paziņojumu atbildīgajiem darbiniekiem un, ja iestatīts, klienta esošajam servisa uzņēmumam.",
       },
       {
-        q: "Vai ThermoGuard pats veic remontu?",
+        q: "Vai Temvio pats veic remontu?",
         a: "Nē. Remontu veic klienta tehniskais personāls vai tā servisa partneris.",
       },
     ],
@@ -345,7 +345,7 @@ export const lv: Dictionary = {
     ctaSecondary: "Skatīt, kā strādā sistēma",
   },
   footer: {
-    tagline: "ThermoGuard — komerciālo saldēšanas iekārtu monitoringa sistēma.",
+    tagline: "Temvio — komerciālo saldēšanas iekārtu monitoringa sistēma.",
     linksHeading: "Navigācija",
     links: {
       how: "Kā tas strādā",
@@ -372,7 +372,7 @@ export const lv: Dictionary = {
     bankName: "PAYSERA UAB",
     swiftLabel: "SWIFT:",
     swift: "EVIULT2VXXX",
-    disclaimer: "ThermoGuard nav avārijas remonta dienests. Iekārtu remontu veic klienta tehniskais personāls vai tā servisa uzņēmums.",
+    disclaimer: "Temvio nav avārijas remonta dienests. Iekārtu remontu veic klienta tehniskais personāls vai tā servisa uzņēmums.",
     rights: "Visas tiesības aizsargātas.",
   },
 };

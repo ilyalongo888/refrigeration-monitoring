@@ -30,7 +30,7 @@ export const LANGUAGES: { code: Lang; label: string }[] = [
 
 const LANG_CODES = LANGUAGES.map((l) => l.code);
 
-const STORAGE_KEY = "thermoguard-lang";
+const STORAGE_KEY = "temvio-lang";
 
 interface LanguageContextValue {
   lang: Lang;

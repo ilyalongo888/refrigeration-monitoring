@@ -7,10 +7,10 @@ import { SectionHeading } from "./ui/SectionHeading";
 // Each locale ships its own fully-localized hardware/product graphic (labels are baked
 // into the PNG) — never overlay translated text on top of a single shared image.
 const hardwareImageByLocale = {
-  lv: "/images/thermoguard-system-lv.png",
-  ru: "/images/thermoguard-system-ru.png",
-  en: "/images/thermoguard-system-en.png",
-  et: "/images/thermoguard-system-et.png",
+  lv: "/images/temvio-system-lv.png",
+  ru: "/images/temvio-system-ru.png",
+  en: "/images/temvio-system-en.png",
+  et: "/images/temvio-system-et.png",
 };
 
 export function HardwareSection() {

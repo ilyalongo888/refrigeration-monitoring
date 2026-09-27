@@ -2,7 +2,7 @@ import type { Dictionary } from "./ru";
 
 export const et: Dictionary = {
   meta: {
-    brand: "ThermoGuard",
+    brand: "Temvio",
   },
   nav: {
     how: "Kuidas see töötab",
@@ -15,7 +15,7 @@ export const et: Dictionary = {
     badge: "MONITOORING 24/7",
     h1: "Saage probleemist teada {{varem}}, enne kui sellest saab suurem {{probleem}}",
     subtitle:
-      "ThermoGuard jälgib teie külmutusseadmeid ööpäevaringselt, tuvastab temperatuurikõrvalekalded ja teavitab automaatselt teie meeskonda ning hooldusettevõtet probleemist.",
+      "Temvio jälgib teie külmutusseadmeid ööpäevaringselt, tuvastab temperatuurikõrvalekalded ja teavitab automaatselt teie meeskonda ning hooldusettevõtet probleemist.",
     ctaPrimary: "Arvuta hind",
     ctaSecondary: "Vaata, kuidas süsteem töötab",
     microcopy: [
@@ -26,7 +26,7 @@ export const et: Dictionary = {
     ],
   },
   dashboard: {
-    title: "THERMOGUARD MONITORING",
+    title: "TEMVIO MONITORING",
     online: "SYSTEM ONLINE",
     metrics: {
       sensors: "AKTIIVSED SENSORID",
@@ -66,9 +66,9 @@ export const et: Dictionary = {
   hardware: {
     heading: "Mis paigaldatakse objektile",
     subtitle:
-      "Keskkontroller ühendatakse külmutusseadmetega, kogub andmeid sensoritelt ja edastab need ThermoGuard monitooringusüsteemi.",
+      "Keskkontroller ühendatakse külmutusseadmetega, kogub andmeid sensoritelt ja edastab need Temvio monitooringusüsteemi.",
     note: "Ühendatavate sensorite arv ja tüüp sõltuvad objektil oleva seadme konfiguratsioonist.",
-    imageAlt: "ThermoGuard süsteem: kontroller, andurid, seirepaneel ja Telegrami teavitused",
+    imageAlt: "Temvio süsteem: kontroller, andurid, seirepaneel ja Telegrami teavitused",
     features: [
       { label: "Kuni 25 sensorit", text: "ühel moodulil" },
       { label: "Monitooring 24/7", text: "pidev parameetrite jälgimine" },
@@ -77,7 +77,7 @@ export const et: Dictionary = {
     ],
   },
   howItWorks: {
-    heading: "Kuidas ThermoGuard töötab",
+    heading: "Kuidas Temvio töötab",
     subtitle: "Seadmel olevast sensorist teavituseni neile, kes peavad reageerima.",
     steps: [
       {
@@ -93,7 +93,7 @@ export const et: Dictionary = {
       {
         number: "03",
         title: "TUVASTAMINE",
-        text: "ThermoGuard tuvastab automaatselt, kui näidud väljuvad lubatud vahemikust.",
+        text: "Temvio tuvastab automaatselt, kui näidud väljuvad lubatud vahemikust.",
       },
       {
         number: "04",
@@ -160,7 +160,7 @@ export const et: Dictionary = {
   serviceCompany: {
     heading: "Ei ole vaja vahetada oma hooldusettevõtet",
     paragraphs: [
-      "ThermoGuard töötab koos teie olemasoleva hoolduse infrastruktuuriga.",
+      "Temvio töötab koos teie olemasoleva hoolduse infrastruktuuriga.",
       "Kriitilise kõrvalekalde korral saab teavituse automaatselt saata teie tehnilisele personalile ja ettevõttele, kes juba teie külmutusseadmeid hooldab.",
     ],
     highlight: "Me ei asenda teie hoolduspartnerit — aitame tal probleemist kiiremini teada saada.",
@@ -168,7 +168,7 @@ export const et: Dictionary = {
   remoteControl: {
     heading: "Mitte ainult monitooring",
     subtitle:
-      "Sõltuvalt külmutusseadme tüübist võib ThermoGuard toetada tööparameetrite kaugmuutmist.",
+      "Sõltuvalt külmutusseadme tüübist võib Temvio toetada tööparameetrite kaugmuutmist.",
     mockup: {
       unit: "Sügavkülmik 02",
       currentLabel: "Praegune temperatuur",
@@ -265,14 +265,14 @@ export const et: Dictionary = {
     ],
   },
   businessScenarios: {
-    heading: "Kus ThermoGuard võib ära hoida tõsiseid kahjusid",
+    heading: "Kus Temvio võib ära hoida tõsiseid kahjusid",
     subtitle: "Mõned tüüpilised olukorrad, kus temperatuurikõrvalekalde varajane avastamine on kriitilise tähtsusega.",
     tag: "TÜÜPILINE STSENAARIUM",
     scenarios: [
       {
         industry: "Külmladu",
         title: "Üle €150 000 väärtuses kaupa oleks võinud jääda ilma jahutuseta",
-        body: "Ettevõte rendib kuueks kuuks külmladu, et ajutiselt hoiustada üle €150 000 väärtuses kaupa. Öösel kaotab objekt elektrienergia. Kohapeal personali ei ole, mistõttu ilma kaugmonitooringuta võidakse probleem avastada alles mitme tunni pärast. ThermoGuard tuvastab temperatuuri tõusu, kui see ületab seatud vahemiku, ja teavitab automaatselt vastutavaid töötajaid ning hooldusettevõtet.",
+        body: "Ettevõte rendib kuueks kuuks külmladu, et ajutiselt hoiustada üle €150 000 väärtuses kaupa. Öösel kaotab objekt elektrienergia. Kohapeal personali ei ole, mistõttu ilma kaugmonitooringuta võidakse probleem avastada alles mitme tunni pärast. Temvio tuvastab temperatuuri tõusu, kui see ületab seatud vahemiku, ja teavitab automaatselt vastutavaid töötajaid ning hooldusettevõtet.",
         metrics: [
           { value: "€150 000+", label: "riskis oleva kauba väärtus" },
           { value: "24/7", label: "automaatne jälgimine" },
@@ -282,7 +282,7 @@ export const et: Dictionary = {
       {
         industry: "Kondiitritööstus",
         title: "Üle 1000 torti enne nädalavahetust",
-        body: "Kondiitritööstusettevõte valmistab nädalavahetuseks suurt tellimuste partiid. Külmkambrites on üle 1000 torti ja magustoidu. Öösel reede ja laupäeva vahel tekib külmutussüsteemis tehniline rike ning temperatuur hakkab seatud vahemikust väljuma. Ilma kaugmonitooringuta võib probleem jääda hommikuni märkamatuks. ThermoGuard tuvastab temperatuurimuutuse ja saadab Telegrami teavituse vastutavatele töötajatele ning tehnilisele ettevõttele.",
+        body: "Kondiitritööstusettevõte valmistab nädalavahetuseks suurt tellimuste partiid. Külmkambrites on üle 1000 torti ja magustoidu. Öösel reede ja laupäeva vahel tekib külmutussüsteemis tehniline rike ning temperatuur hakkab seatud vahemikust väljuma. Ilma kaugmonitooringuta võib probleem jääda hommikuni märkamatuks. Temvio tuvastab temperatuurimuutuse ja saadab Telegrami teavituse vastutavatele töötajatele ning tehnilisele ettevõttele.",
         metrics: [
           { value: "1000+", label: "valmistoodangu ühikut" },
           { value: "R → L", label: "kriitiline öö enne tarneid" },
@@ -292,7 +292,7 @@ export const et: Dictionary = {
       {
         industry: "Lillelaod",
         title: "Mõni tund vale temperatuuri võib rikkuda kogu tarne",
-        body: "Lillede hulgimüüja saab suuri värske kauba partiisid. Lilli hoitakse külmruumides kuni jaotamiseni kauplustele ja lillepoodidele. Öösel hakkab ühe kambri temperatuur seadme rikke tõttu järk-järgult tõusma. Ladu on suletud, personali kohal ei ole. ThermoGuard jätkab näitude jälgimist ja seatud piirmäära ületamisel saadab automaatselt teavituse vastutavale töötajale ning hooldusettevõttele.",
+        body: "Lillede hulgimüüja saab suuri värske kauba partiisid. Lilli hoitakse külmruumides kuni jaotamiseni kauplustele ja lillepoodidele. Öösel hakkab ühe kambri temperatuur seadme rikke tõttu järk-järgult tõusma. Ladu on suletud, personali kohal ei ole. Temvio jätkab näitude jälgimist ja seatud piirmäära ületamisel saadab automaatselt teavituse vastutavale töötajale ning hooldusettevõttele.",
         metrics: [
           { value: "24/7", label: "jälgimine ilma personalita" },
           { value: "Kvaliteedirisk", label: "ja lühenenud säilivusaeg" },
@@ -306,7 +306,7 @@ export const et: Dictionary = {
     items: [
       {
         q: "Kas ma pean oma senise hooldusettevõtte vahetama?",
-        a: "Ei. ThermoGuard saab teavitada teie praegust hooldusettevõtet.",
+        a: "Ei. Temvio saab teavitada teie praegust hooldusettevõtet.",
       },
       {
         q: "Mitut sensorit baasmoodul toetab?",
@@ -330,10 +330,10 @@ export const et: Dictionary = {
       },
       {
         q: "Mis juhtub avarii korral?",
-        a: "ThermoGuard tuvastab kõrvalekalde ja saadab teavituse vastutavatele töötajatele ning, kui seadistatud, kliendi olemasolevale hooldusettevõttele.",
+        a: "Temvio tuvastab kõrvalekalde ja saadab teavituse vastutavatele töötajatele ning, kui seadistatud, kliendi olemasolevale hooldusettevõttele.",
       },
       {
-        q: "Kas ThermoGuard teeb remonti ise?",
+        q: "Kas Temvio teeb remonti ise?",
         a: "Ei. Remonti teeb kliendi enda tehniline personal või tema hoolduspartner.",
       },
     ],
@@ -346,7 +346,7 @@ export const et: Dictionary = {
     ctaSecondary: "Vaata, kuidas süsteem töötab",
   },
   footer: {
-    tagline: "ThermoGuard on kommertskülmutusseadmete monitooringusüsteem.",
+    tagline: "Temvio on kommertskülmutusseadmete monitooringusüsteem.",
     linksHeading: "Navigeerimine",
     links: {
       how: "Kuidas see töötab",
@@ -373,7 +373,7 @@ export const et: Dictionary = {
     bankName: "PAYSERA UAB",
     swiftLabel: "SWIFT:",
     swift: "EVIULT2VXXX",
-    disclaimer: "ThermoGuard ei ole avariiremondi teenus. Seadmete remonti teostab kliendi tehniline personal või tema hooldusettevõte.",
+    disclaimer: "Temvio ei ole avariiremondi teenus. Seadmete remonti teostab kliendi tehniline personal või tema hooldusettevõte.",
     rights: "Kõik õigused kaitstud.",
   },
 };

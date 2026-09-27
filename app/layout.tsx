@@ -23,7 +23,7 @@ const siteUrl = "https://refrigeration-monitoring.vercel.app";
 // still offers LV / RU / EN / ET via the in-page language switcher (see LanguageContext).
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Saldēšanas iekārtu monitorings 24/7 | ThermoGuard",
+  title: "Saldēšanas iekārtu monitorings 24/7 | Temvio",
   description:
     "Diennakts saldēšanas iekārtu temperatūras monitorings un tūlītēji paziņojumi par novirzēm. Papildina jūsu servisa uzņēmumu — neaizstāj to.",
   keywords: [
@@ -36,11 +36,11 @@ export const metadata: Metadata = {
     "temperatūras novirzes paziņojumi",
   ],
   openGraph: {
-    title: "Saldēšanas iekārtu monitorings 24/7 | ThermoGuard",
+    title: "Saldēšanas iekārtu monitorings 24/7 | Temvio",
     description:
       "Atklājiet novirzi agrāk. Informējiet atbildīgos uzreiz. Diennakts temperatūras monitorings un attālā parametru vadība — bez jūsu servisa uzņēmuma aizstāšanas.",
     url: siteUrl,
-    siteName: "ThermoGuard",
+    siteName: "Temvio",
     locale: "lv_LV",
     alternateLocale: ["ru_RU", "en_US", "et_EE"],
     type: "website",

@@ -2,7 +2,7 @@ import type { Dictionary } from "./ru";
 
 export const en: Dictionary = {
   meta: {
-    brand: "ThermoGuard",
+    brand: "Temvio",
   },
   nav: {
     how: "How It Works",
@@ -15,7 +15,7 @@ export const en: Dictionary = {
     badge: "24/7 MONITORING",
     h1: "Find out about a problem {{sooner}}, before it turns into a bigger {{problem}}",
     subtitle:
-      "ThermoGuard monitors your refrigeration equipment around the clock, detects temperature deviations, and automatically notifies your team and service company about the issue.",
+      "Temvio monitors your refrigeration equipment around the clock, detects temperature deviations, and automatically notifies your team and service company about the issue.",
     ctaPrimary: "Calculate Cost",
     ctaSecondary: "See How It Works",
     microcopy: [
@@ -26,7 +26,7 @@ export const en: Dictionary = {
     ],
   },
   dashboard: {
-    title: "THERMOGUARD MONITORING",
+    title: "TEMVIO MONITORING",
     online: "SYSTEM ONLINE",
     metrics: {
       sensors: "ACTIVE SENSORS",
@@ -66,9 +66,9 @@ export const en: Dictionary = {
   hardware: {
     heading: "What gets installed on site",
     subtitle:
-      "The central controller connects to your refrigeration equipment, collects sensor data, and sends it to the ThermoGuard monitoring system.",
+      "The central controller connects to your refrigeration equipment, collects sensor data, and sends it to the Temvio monitoring system.",
     note: "The number and type of connected sensors depends on the equipment configuration on site.",
-    imageAlt: "ThermoGuard system: controller, sensors, monitoring dashboard and Telegram notifications",
+    imageAlt: "Temvio system: controller, sensors, monitoring dashboard and Telegram notifications",
     features: [
       { label: "Up to 25 sensors", text: "per module" },
       { label: "24/7 monitoring", text: "continuous parameter tracking" },
@@ -77,7 +77,7 @@ export const en: Dictionary = {
     ],
   },
   howItWorks: {
-    heading: "How ThermoGuard Works",
+    heading: "How Temvio Works",
     subtitle: "From a sensor on your equipment to a notification for whoever needs to respond.",
     steps: [
       {
@@ -93,7 +93,7 @@ export const en: Dictionary = {
       {
         number: "03",
         title: "DETECTION",
-        text: "ThermoGuard automatically detects when readings go outside the allowed range.",
+        text: "Temvio automatically detects when readings go outside the allowed range.",
       },
       {
         number: "04",
@@ -160,7 +160,7 @@ export const en: Dictionary = {
   serviceCompany: {
     heading: "No need to change your service company",
     paragraphs: [
-      "ThermoGuard works alongside your existing service infrastructure.",
+      "Temvio works alongside your existing service infrastructure.",
       "On a critical deviation, a notification can be sent automatically to your technical staff and the company that already services your refrigeration equipment.",
     ],
     highlight: "We don't replace your service partner — we help them find out about the problem sooner.",
@@ -168,7 +168,7 @@ export const en: Dictionary = {
   remoteControl: {
     heading: "Not just monitoring",
     subtitle:
-      "Depending on the type of refrigeration equipment, ThermoGuard can support remote adjustment of operating parameters.",
+      "Depending on the type of refrigeration equipment, Temvio can support remote adjustment of operating parameters.",
     mockup: {
       unit: "Freezer Unit 02",
       currentLabel: "Current temperature",
@@ -265,14 +265,14 @@ export const en: Dictionary = {
     ],
   },
   businessScenarios: {
-    heading: "Where ThermoGuard can prevent serious losses",
+    heading: "Where Temvio can prevent serious losses",
     subtitle: "A few typical situations where early detection of a temperature deviation is critical.",
     tag: "TYPICAL SCENARIO",
     scenarios: [
       {
         industry: "Cold Storage Warehouse",
         title: "Over €150,000 of product could have been left without refrigeration",
-        body: "A company rents a cold storage warehouse for six months to temporarily store product worth more than €150,000. Overnight, the site loses power. There's no staff on site, so without remote monitoring the problem might only be discovered hours later. ThermoGuard detects the temperature rise once it exceeds the set range and automatically notifies the responsible staff and the service company.",
+        body: "A company rents a cold storage warehouse for six months to temporarily store product worth more than €150,000. Overnight, the site loses power. There's no staff on site, so without remote monitoring the problem might only be discovered hours later. Temvio detects the temperature rise once it exceeds the set range and automatically notifies the responsible staff and the service company.",
         metrics: [
           { value: "€150,000+", label: "product value at risk" },
           { value: "24/7", label: "automatic monitoring" },
@@ -282,7 +282,7 @@ export const en: Dictionary = {
       {
         industry: "Confectionery Production",
         title: "Over 1,000 cakes before the weekend",
-        body: "A confectionery producer is preparing a large batch of orders for the weekend. Cold rooms hold over 1,000 cakes and desserts. On the night between Friday and Saturday, a technical fault develops in the refrigeration system and the temperature starts drifting outside the set range. Without remote monitoring, the problem could go unnoticed until morning. ThermoGuard detects the temperature change and sends a Telegram notification to the responsible staff and the technical company.",
+        body: "A confectionery producer is preparing a large batch of orders for the weekend. Cold rooms hold over 1,000 cakes and desserts. On the night between Friday and Saturday, a technical fault develops in the refrigeration system and the temperature starts drifting outside the set range. Without remote monitoring, the problem could go unnoticed until morning. Temvio detects the temperature change and sends a Telegram notification to the responsible staff and the technical company.",
         metrics: [
           { value: "1,000+", label: "finished products" },
           { value: "Fri → Sat", label: "critical night before deliveries" },
@@ -292,7 +292,7 @@ export const en: Dictionary = {
       {
         industry: "Flower Warehouse",
         title: "A few hours at the wrong temperature can ruin a shipment",
-        body: "A wholesale flower supplier receives large batches of fresh product. Flowers are stored in cold rooms until distribution to shops and florists. Overnight, the temperature in one of the rooms starts gradually rising due to an equipment fault. The warehouse is closed, with no staff present. ThermoGuard keeps monitoring the readings and, once the set threshold is exceeded, automatically sends a notification to the responsible employee and the service company.",
+        body: "A wholesale flower supplier receives large batches of fresh product. Flowers are stored in cold rooms until distribution to shops and florists. Overnight, the temperature in one of the rooms starts gradually rising due to an equipment fault. The warehouse is closed, with no staff present. Temvio keeps monitoring the readings and, once the set threshold is exceeded, automatically sends a notification to the responsible employee and the service company.",
         metrics: [
           { value: "24/7", label: "monitoring with no staff present" },
           { value: "Quality risk", label: "and reduced shelf life" },
@@ -306,7 +306,7 @@ export const en: Dictionary = {
     items: [
       {
         q: "Do I need to change my existing service company?",
-        a: "No. ThermoGuard can notify your current service company.",
+        a: "No. Temvio can notify your current service company.",
       },
       {
         q: "How many sensors does the base module support?",
@@ -330,10 +330,10 @@ export const en: Dictionary = {
       },
       {
         q: "What happens during an emergency?",
-        a: "ThermoGuard detects the deviation and sends a notification to the responsible staff and, if configured, the client's existing service company.",
+        a: "Temvio detects the deviation and sends a notification to the responsible staff and, if configured, the client's existing service company.",
       },
       {
-        q: "Does ThermoGuard carry out repairs itself?",
+        q: "Does Temvio carry out repairs itself?",
         a: "No. Repairs are carried out by the client's own technical staff or their service contractor.",
       },
     ],
@@ -346,7 +346,7 @@ export const en: Dictionary = {
     ctaSecondary: "See How It Works",
   },
   footer: {
-    tagline: "ThermoGuard is a monitoring system for commercial refrigeration equipment.",
+    tagline: "Temvio is a monitoring system for commercial refrigeration equipment.",
     linksHeading: "Navigation",
     links: {
       how: "How It Works",
@@ -373,7 +373,7 @@ export const en: Dictionary = {
     bankName: "PAYSERA UAB",
     swiftLabel: "SWIFT:",
     swift: "EVIULT2VXXX",
-    disclaimer: "ThermoGuard is not an emergency repair service. Equipment repairs are carried out by the client's technical staff or their service company.",
+    disclaimer: "Temvio is not an emergency repair service. Equipment repairs are carried out by the client's technical staff or their service company.",
     rights: "All rights reserved.",
   },
 };
