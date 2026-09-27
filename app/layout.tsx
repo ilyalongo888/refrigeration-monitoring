@@ -16,8 +16,7 @@ const mono = JetBrains_Mono({
   weight: ["400", "500", "600"],
 });
 
-// TODO: replace with the production domain once one is assigned (currently the Vercel preview URL).
-const siteUrl = "https://refrigeration-monitoring.vercel.app";
+const siteUrl = "https://temvio.eu";
 
 // Latvia is the primary market, so metadata defaults to Latvian; the site itself
 // still offers LV / RU / EN / ET via the in-page language switcher (see LanguageContext).
