@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
-import { SectionHeading } from "./ui/SectionHeading";
 
-// Each locale ships its own fully-localized hardware/product graphic (labels are baked
-// into the PNG) — never overlay translated text on top of a single shared image.
+// Each locale ships its own fully-localized hardware/product graphic — the heading,
+// subtitle, sensor note and feature callouts are all baked into the PNG itself, so
+// this component renders nothing but the image (no HTML text duplicating it).
 const hardwareImageByLocale = {
   lv: "/images/temvio-system-lv.png",
   ru: "/images/temvio-system-ru.png",
@@ -21,9 +21,7 @@ export function HardwareSection() {
   return (
     <section className="border-t border-[rgba(148,163,184,0.08)] bg-[#0B1728] py-16 sm:py-24 lg:py-28">
       <div className="container">
-        <SectionHeading heading={hw.heading} subtitle={hw.subtitle} theme="dark" className="max-w-2xl" />
-
-        <div className="relative mx-auto mt-12 w-full">
+        <div className="relative mx-auto w-full max-w-5xl">
           <div
             className="pointer-events-none absolute -inset-8 -z-10 rounded-[32px] bg-accent-cyan/[0.06] blur-3xl"
             aria-hidden
@@ -41,17 +39,6 @@ export function HardwareSection() {
               className="object-contain"
             />
           </div>
-        </div>
-
-        <p className="mx-auto mt-5 max-w-2xl text-center text-sm text-text-secondary">{hw.note}</p>
-
-        <div className="mx-auto mt-10 grid max-w-4xl grid-cols-2 gap-x-6 gap-y-6 lg:grid-cols-4 lg:gap-x-8">
-          {hw.features.map((feature, i) => (
-            <div key={i} className="text-center">
-              <p className="text-[15px] font-semibold text-text-primary">{feature.label}</p>
-              <p className="mt-1 text-xs leading-relaxed text-text-secondary">{feature.text}</p>
-            </div>
-          ))}
         </div>
       </div>
     </section>
