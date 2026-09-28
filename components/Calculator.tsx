@@ -29,6 +29,8 @@ export function Calculator() {
   const [remote, setRemote] = useState<string | null>(null);
 
   const [lead, setLead] = useState({ name: "", company: "", phone: "", email: "" });
+  const [submitting, setSubmitting] = useState(false);
+  const [leadError, setLeadError] = useState<string | null>(null);
 
   const markStarted = () => {
     if (!started) {
@@ -73,8 +75,11 @@ export function Calculator() {
     ? `${c.result.fromPrefix} €${monthly} ${c.result.monthlyUnit}`
     : `€${monthly} ${c.result.monthlyUnit}`;
 
-  const handleLeadSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleLeadSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setLeadError(null);
+    setSubmitting(true);
+
     track("lead_form_submitted", {
       objects,
       sensors: sensorsPlus ? `${SENSOR_MAX}+` : sensors,
@@ -82,7 +87,38 @@ export function Calculator() {
       remote,
       estimateMonthly: monthly,
     });
-    setPhase("success");
+
+    // Передаём ИНДЕКСЫ вариантов (порядок одинаков во всех языках),
+    // чтобы сервер корректно сопоставил их с русскими значениями в Kommo.
+    const payload = {
+      name: lead.name,
+      company: lead.company,
+      phone: lead.phone,
+      email: lead.email,
+      objects: c.steps.objects.options.indexOf(objects as string),
+      sensors: sensorsPlus ? `${SENSOR_MAX}+` : sensors,
+      equipment: equipment.map((label) => c.steps.equipment.options.indexOf(label)),
+      remote: c.steps.remote.options.indexOf(remote as string),
+      estimateMonthly: monthly,
+    };
+
+    try {
+      const res = await fetch("/api/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json();
+      if (data?.ok) {
+        setPhase("success");
+      } else {
+        setLeadError(data?.error || "Something went wrong. Please try again.");
+      }
+    } catch {
+      setLeadError("Network error. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -313,8 +349,11 @@ export function Calculator() {
                     onChange={(v) => setLead((l) => ({ ...l, email: v }))}
                   />
                 </div>
+                {leadError && (
+                  <p className="mt-4 text-sm text-status-alert">{leadError}</p>
+                )}
                 <div className="mt-6">
-                  <Button type="submit" fullWidth size="lg">
+                  <Button type="submit" fullWidth size="lg" disabled={submitting}>
                     {c.leadForm.submit}
                   </Button>
                 </div>
